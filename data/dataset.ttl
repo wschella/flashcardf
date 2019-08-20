@@ -1,0 +1,167 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ml: <http://example.com/> .
+
+
+ml:Writer a owl:Class .
+
+ml:Book a owl:Class .
+
+ml:Period a owl:Class .
+
+ml:Genre a owl:Class .
+
+ml:hasPeriod a owl:ObjectProperty .
+
+ml:writtenBy a owl:ObjectProperty ;
+  rdfs:domain ml:Book ;
+  rdfs:range ml:Writer .
+
+ml:hasGenre a owl:ObjectProperty ;
+  rdfs:domain ml:Book ;
+  rdfs:range ml:Genre .
+
+ml:name a owl:DatatypeProperty ;
+  rdfs:domain ml:Writer ;
+  rdfs:range xsd:string .
+
+ml:title a owl:DatatypeProperty ;
+  rdfs:domain ml:Book ;
+  rdfs:range xsd:string .
+
+# -----------------------------
+
+ml:12th a ml:Period ;
+  rdf:label "12de eeuw"@nl ;
+  rdf:label "12th century"@en .
+
+ml:13th a ml:Period ;
+  rdf:label "13de eeuw"@nl ;
+  rdf:label "13th century"@en .
+
+ml:14th a ml:Period ;
+  rdf:label "14de eeuw"@nl ;
+  rdf:label "14th century"@en .
+
+ml:15th a ml:Period ;
+  rdf:label "15de eeuw"@nl ;
+  rdf:label "15th century"@en .
+
+ml:16th a ml:Period ;
+  rdf:label "16de eeuw"@nl ;
+  rdf:label "16th century"@en .
+
+ml:17th a ml:Period ;
+  rdf:label "17de eeuw"@nl ;
+  rdf:label "17th century"@en .
+
+ml:18th a ml:Period ;
+  rdf:label "18de eeuw"@nl ;
+  rdf:label "18th century"@en .
+
+ml:19th_first a ml:Period ;
+  rdf:label "eerste helft van de 19de eeuw"@nl ;
+  rdf:label "first half of the 19th century"@en .
+
+ml:19th_second a ml:Period ;
+  rdf:label "tweede helft van de 19de eeuw"@nl ;
+  rdf:label "second half of the 19th century"@en .
+ 
+# -----------------------------
+
+ml:British_Knight_Roman a ml:Genre ;
+  rdf:label "Britse Ridderroman"@nl .
+
+ml:Eastern_Knight_Roman a ml:Genre ;
+  rdf:label "Oosterse Ridderroman"@nl .
+
+# -----------------------------
+
+ml:Hendrik_van_Veldeke a ml:Writer ;
+  ml:name "Hendrik van Veldeke" ;
+  ml:hasPeriod ml:12th .
+  
+
+ml:Chrétien_de_Troyes a ml:Writer ;
+  ml:name "Chrétien de Troyes" ;
+  ml:hasPeriod ml:12th .
+
+ml:Wolfram_van_Eschenbach a ml:Writer ;
+  ml:name "Wolfram van Eschenbach" ;
+  ml:hasPeriod ml:13th .
+
+ml:Gottfried_von_Strassburg a ml:Writer ;
+  ml:name "Gottfried von Strassburg" ;
+  ml:hasPeriod ml:13th .
+
+ml:Dante_Alighieri a ml:Writer ;
+  ml:name "Dante Alighieri" ;
+  ml:hasPeriod ml:13th ;
+  ml:hasPeriod ml:14th .
+
+ml:François_Villon a ml:Writer ;
+  ml:name "François Villon" ;
+  ml:hasPeriod ml:15th .
+
+ml:Giovanni_Boccaccio a ml:Writer ;
+  ml:name "Giovanni Boccaccio" ;
+  ml:hasPeriod ml:14th .
+
+ml:Geoffrey_Chaucer a ml:Writer ;
+  ml:name "Geoffrey Chaucer" ;
+  ml:hasPeriod ml:14th .
+
+# -----------------------------
+
+ml:Eneide a ml:Book ;
+  ml:title "Eneide" ;
+  ml:writtenBy ml:Hendrik_van_Veldeke ;
+  ml:hasGenre ml:British_Knight_Roman .
+
+ml:Sir_Gawain a ml:Book ;
+  ml:title "Sir Gawain and the Green Knight" ;
+  ml:writtenBy ml:Chrétien_de_Troyes ;
+  ml:hasGenre ml:Eastern_Knight_Roman .
+
+ml:Parcifal a ml:Book ;
+  ml:title "Parcifal" ;
+  ml:writtenBy ml:Wolfram_van_Eschenbach .
+
+ml:Tristan a ml:Book ;
+  ml:title "Tristan" ;
+  ml:writtenBy ml:Gottfried_von_Strassburg ;
+  ml:hasGenre ml:Eastern_Knight_Roman .
+
+ml:La_Vita_Nuova a ml:Book ;
+  ml:title "La Vita Nuova" ;
+  ml:writtenBy ml:Dante_Alighieri .
+
+ml:De_Vulgari_Eloquentia a ml:Book ;
+  ml:title "De Vulgari Eloquentia" ;
+  ml:writtenBy ml:Dante_Alighieri .
+
+ml:De_Monarchia a ml:Book ;
+  ml:title "De Monarchia" ;
+  ml:writtenBy ml:Dante_Alighieri .
+
+ml:La_Divina_Commedia a ml:Book ;
+  ml:title "La Divina Commedia" ;
+  ml:writtenBy ml:Dante_Alighieri .
+
+ml:Le_Lais a ml:Book ;
+  ml:title "Le Lais (Le petit Testament)" ;
+  ml:writtenBy ml:François_Villon .
+
+ml:Le_Grand_Testament a ml:Book ;
+  ml:title "Le Grand Testament" ;
+  ml:writtenBy ml:François_Villon .
+
+ml:Il_Decamerone a ml:Book ;
+  ml:title "Il Decamerone" ;
+  ml:writtenBy ml:Giovanni_Boccaccio .
+
+ml:Canterbury_Tales a ml:Book ;
+  ml:title "Canterbury Tales" ;
+  ml:writtenBy ml:Geoffrey_Chaucer .

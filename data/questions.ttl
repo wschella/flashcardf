@@ -1,0 +1,32 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ml: <http://example.com/> .
+
+ml:QuestionFormat a owl:Class .
+
+ml:hasFormat a owl:DatatypeProperty ;
+  ml:domain ml:QuestionFormat ;
+  ml:range xsd:string .
+
+ml:hasContext a owl:ObjectProperty ;
+  ml:domain ml:QuestionFormat ;
+  ml:range ml:Period .
+
+ml:hasAnswer a owl:ObjectProperty ;
+  ml:domain ml:QuestionFormat ;
+  ml:range ml:Period .
+
+ml:shouldSuggest a owl:DatatypeProperty ;
+  ml:domain ml:QuestionFormat ;
+  ml:range xsd:int .
+
+
+# Which work got written in (a ml:Period)? Suggest 4.
+ml:Format1 a ml:QuestionFormat ;
+  ml:hasFormat "Welk werk werd geschreven in {}?" ;
+  ml:hasContext ml:Period ;
+  ml:hasAnswer ml:Book ;
+  ml:hasRelation (ml:writtenBy ml:hasPeriod) ;
+  ml:shouldSuggest 4.

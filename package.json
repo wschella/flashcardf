@@ -1,0 +1,19 @@
+{
+  "name": "flashcards-rdf",
+  "version": "0.1.0",
+  "description": "A CLI for making flashcard style-quizes based on RDF datasets",
+  "main": "dist/index.js",
+  "author": "Wout Schellaert <wout.schellaert@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": { "flash": "./dist/index.js" },
+  "scripts": {
+    "flash": "node ./dist/index.js",
+    "watch": "tsc -w",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2",
+    "typescript": "^3.5.3"
+  }
+}
