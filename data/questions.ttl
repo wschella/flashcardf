@@ -2,31 +2,38 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ml: <http://example.com/> .
 
-ml:QuestionFormat a owl:Class .
+@prefix fc: <questions/ontology.ttl#> .
+@prefix q: <questions/questions.ttl#> .
+@prefix lit: <dataset/ontology.ttl#> .
 
-ml:hasFormat a owl:DatatypeProperty ;
-  ml:domain ml:QuestionFormat ;
-  ml:range xsd:string .
+fc:QuestionFormat a owl:Class .
 
-ml:hasContext a owl:ObjectProperty ;
-  ml:domain ml:QuestionFormat ;
-  ml:range ml:Period .
+fc:hasFormat a owl:DatatypeProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:string .
 
-ml:hasAnswer a owl:ObjectProperty ;
-  ml:domain ml:QuestionFormat ;
-  ml:range ml:Period .
+fc:hasContext a owl:ObjectProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range lit:Period .
 
-ml:shouldSuggest a owl:DatatypeProperty ;
-  ml:domain ml:QuestionFormat ;
-  ml:range xsd:int .
+fc:hasAnswer a owl:ObjectProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range lit:Period .
 
+fc:shouldSuggest a owl:DatatypeProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:int .
+
+# To Do
+fc:hasRelation a owl:ObjectProperty .
+  # rdfs:domain fc:QuestionFormat ;
+  # rdfs:range xsd:int .
 
 # Which work got written in (a ml:Period)? Suggest 4.
-ml:Format1 a ml:QuestionFormat ;
-  ml:hasFormat "Welk werk werd geschreven in {}?" ;
-  ml:hasContext ml:Period ;
-  ml:hasAnswer ml:Book ;
-  ml:hasRelation (ml:writtenBy ml:hasPeriod) ;
-  ml:shouldSuggest 4.
+q:Format1 a fc:QuestionFormat ;
+  fc:hasFormat "Welk werk werd geschreven in {}?" ;
+  fc:hasContext lit:Period ;
+  fc:hasAnswer lit:Book ;
+  fc:hasRelation (lit:writtenBy lit:hasPeriod) ;
+  fc:shouldSuggest 4.
