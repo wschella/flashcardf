@@ -32,6 +32,7 @@ class QuizUI extends Component<{}, QuizState> {
     return (
       <Box flexDirection="column">
         <Welcome />
+        <Feedback questionsLog={questionLog} />
         <Stats questionsLog={questionLog} />
         <Question
           number={questionNumber}
@@ -51,6 +52,7 @@ class QuizUI extends Component<{}, QuizState> {
 
 interface QuestionStat {
   answer: "correct" | "wrong" | "skipped";
+  correct: any;
 }
 
 interface QuestionProps {
@@ -73,14 +75,14 @@ class Question extends Component<QuestionProps> {
 
     const onSelect = (item: Item) => {
       if (item.value === "skipped") {
-        return onNextQuestion({ answer: "skipped" });
+        return onNextQuestion({ answer: "skipped", correct: answer.value });
       }
 
       if (item.value === correct) {
-        return onNextQuestion({ answer: "correct" });
+        return onNextQuestion({ answer: "correct", correct: answer.value });
       }
 
-      return onNextQuestion({ answer: "wrong" });
+      return onNextQuestion({ answer: "wrong", correct: answer.value });
     };
 
     return (
@@ -111,6 +113,40 @@ class Welcome extends Component {
   }
 }
 
+interface FeedbackProps {
+  questionsLog: QuestionStat[];
+}
+
+class Feedback extends Component<FeedbackProps> {
+  public render() {
+    const log = this.props.questionsLog;
+    if (log.length <= 0) {
+      return null;
+    }
+
+    const last = log[log.length - 1];
+    switch (last.answer) {
+      case "wrong":
+        return (
+          <Box>
+            <Color red>-- wrong</Color> (answer was {last.correct});
+          </Box>
+        );
+      case "skipped":
+        return (
+          <Box>
+            <Color yellow>-- skipped</Color> (answer was{" "}
+            <Text bold>{last.correct}</Text>);
+          </Box>
+        );
+      case "correct":
+        return <Color green>-- correct</Color>;
+      default:
+        return <Color red>Something went wrong!</Color>;
+    }
+  }
+}
+
 interface StatsProps {
   questionsLog: QuestionStat[];
 }
@@ -131,20 +167,6 @@ class Stats extends Component<StatsProps> {
     // TODO: Colour green red, orange.
     return (
       <Box flexDirection="column">
-        {log.length > 0
-          ? (() => {
-              switch (log[log.length - 1].answer) {
-                case "wrong":
-                  return <Color red>-- wrong</Color>;
-                case "skipped":
-                  return <Color yellow>-- skipped</Color>;
-                case "correct":
-                  return <Color green>-- correct</Color>;
-                default:
-                  return <Color red>Something went wrong!</Color>;
-              }
-            })()
-          : null}
         <Text bold={true}>
           -- {amount} questions of which <Color green>{correct} correct</Color>,{" "}
           <Color red>{wrong} wrong</Color>, and{" "}
