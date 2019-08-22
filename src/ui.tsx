@@ -68,7 +68,7 @@ class Question extends Component<QuestionProps> {
   public render() {
     const quiz = this.context;
     const { number, onNextQuestion } = this.props;
-    const { answer, suggestions, prompt } = quiz.getQuestion();
+    const { answer, suggestions, prompt, format } = quiz.getQuestion();
     const correct = randomBetween(0, suggestions.length);
     const options = [...suggestions];
     options.splice(correct, 0, answer);
@@ -87,11 +87,11 @@ class Question extends Component<QuestionProps> {
 
     return (
       <Box key={number} flexDirection="column">
-        {prompt.value}
+        <Text italic>{quiz.formatPrompt(format, prompt)}</Text>
         <SelectInput
           items={options
             .map((o, i) => ({
-              label: o.value,
+              label: quiz.formatOption(format, o),
               value: i as string | number
             }))
             .concat([{ label: "Skip", value: "skipped" as string | number }])}

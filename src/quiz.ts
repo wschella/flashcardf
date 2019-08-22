@@ -2,9 +2,17 @@ import * as fs from "fs";
 import * as path from "path";
 
 import * as rdf from "rdflib";
-import { IndexedFormula, Namespace, Query, Node, Bindings } from "rdflib";
+import {
+  IndexedFormula,
+  Namespace,
+  Query,
+  Node,
+  Collection,
+  Literal
+} from "rdflib";
 
 import { Args, shuffle, random } from "./util";
+import { node } from "prop-types";
 
 // TODO: Join stores together and use 4th argument to specify source
 // TODO: Support multiple prompts
@@ -92,9 +100,6 @@ export class Quiz {
   // TODO: Validate all queries
   public getQuestion() {
     const format = random(this.formats);
-    const promptFormat = random(
-      this.questions.each(format, FC("hasPromptFormat"))
-    );
     const numOfOptions = parseInt(
       random(this.questions.each(format, FC("shouldSuggest"))).value,
       10
@@ -134,12 +139,33 @@ export class Quiz {
         ? possibleSuggestions.slice(0, numOfOptions - 1)
         : possibleSuggestions.slice(0, wrongAnswers.size);
 
-    return { prompt, answer, suggestions };
+    return { format, prompt, answer, suggestions };
+  }
+
+  public formatPrompt(questionFormat: Node, prompt: Node): string {
+    const promptFormat = random(
+      this.questions.each(questionFormat, FC("hasPromptFormat"))
+    );
+    const label = this.labelify(prompt);
+    const segments = (promptFormat as Collection).elements.map(s => s.value);
+    segments.splice(1, 0, label);
+    return segments.join("");
+  }
+
+  public formatOption(questionFormat: Node, option: Node): string {
+    return this.labelify(option);
   }
 
   private querify(sparqlQuery: string): Query {
     const sparql = this.prefix + sparqlQuery;
     return SPARQLToQuery(sparql, false, this.dataset);
+  }
+
+  private labelify(node: Node): string {
+    const labels = this.dataset
+      .each(node, RDF("label"))
+      .filter(label => (label as Literal).lang === "nl");
+    return labels.length >= 1 ? labels[0].value : node.value;
   }
 }
 
