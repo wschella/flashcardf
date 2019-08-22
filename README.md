@@ -2,7 +2,9 @@
 
 A CLI tool to do flashcard style quizes based on RDF datasets.
 
-## To Do
+![Screenshot](./docs/images/screenshot1.png)
+
+## README To Do
 
 - You write the question formats yourself
   - 'DSL', explain algorithm
