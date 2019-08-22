@@ -21,6 +21,9 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "rdflib": "^1.0.3"
+    "ink": "^2.3.0",
+    "ink-select-input": "^3.1.2",
+    "rdflib": "^1.0.3",
+    "react": "^16.9.0"
   }
 }
