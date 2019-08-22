@@ -64,7 +64,6 @@ q:Format1 a fc:QuestionFormat ;
   }""" ;
   fc:hasAnswer """SELECT ?answer WHERE {
     ?book lit:title ?answer .
-    ?book lit:writtenBy ?author .
-    ?author lit:hasPeriod ?prompt .
+    ?book lit:hasPeriod ?prompt .
   }""" ;
   fc:shouldSuggest 4.

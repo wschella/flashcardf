@@ -6,15 +6,21 @@
 @prefix lit: <dataset/ontology.ttl#> .
 @prefix ml: <dataset/data.ttl#> .
 
-
+# Ontology --------------------------------------------------------------------
 
 lit:Writer a owl:Class .
 
 lit:Book a owl:Class .
 
-lit:Period a owl:Class .
+lit:TimePeriod a owl:Class .
+
+lit:LitaturePeriod a owl:Class .
 
 lit:Genre a owl:Class .
+
+lit:Trait a owl:Class .
+
+lit:LiteraryType a owl:Class .
 
 lit:hasPeriod a owl:ObjectProperty .
 
@@ -34,108 +40,471 @@ lit:title a owl:DatatypeProperty ;
   rdfs:domain lit:Book ;
   rdfs:range xsd:string .
 
-# -----------------------------
+lit:inLiteraturePeriod a owl:ObjectProperty ;
+  rdfs:domain lit:Genre ;
+  rdfs:range lit:LitaturePeriod .
 
-ml:12th a lit:Period ;
+lit:inTimePeriod a owl:ObjectProperty ;
+  rdfs:domain lit:LitaturePeriod ;
+  rdfs:domain lit:Genre ;
+  rdfs:range lit:TimePeriod .
+
+lit:characterizedBy a owl:ObjectProperty ;
+  rdfs:domain lit:Genre ;
+  rdfs:domain lit:Writer ;
+  rdfs:range lit:Trait .
+
+lit:wiki a owl:ObjectProperty .
+
+lit:hasType a owl:ObjectProperty ;
+  rdfs:domain lit:Book ;
+  rdfs:range lit:LiteraryType .
+
+lit:isSubGenreOf a owl:ObjectProperty ;
+  rdfs:domain lit:Genre ;
+  rdfs:range lit:Genre .
+
+# Cultural Periods ------------------------------------------------------------
+
+ml:Middle_Ages a lit:LitaturePeriod ;
+  rdf:label "Middeleeuwen"@nl ;
+  rdf:label "Middle Ages"@en ;
+  lit:inTimePeriod
+    ml:5th ,
+    ml:6th ,
+    ml:7th ,
+    ml:8th ,
+    ml:9th ,
+    ml:10th ,
+    ml:11th ,
+    ml:12th ,
+    ml:13th ,
+    ml:14th ,
+    ml:15th .
+  
+ml:Early_Middle_Ages a lit:LitaturePeriod ;
+  rdf:label "Vroeg-middeleeuwen"@nl ;
+  rdf:label "Early Middle Ages"@en ;
+  lit:inTimePeriod
+    ml:5th ,
+    ml:6th ,
+    ml:7th ,
+    ml:8th ,
+    ml:9th ,
+    ml:10th .
+
+ml:High_Middle_Ages a lit:LitaturePeriod ;
+  rdf:label "Hoog-middeleeuwen"@nl ;
+  rdf:label "High Middle Ages"@en ;
+  lit:inTimePeriod ml:11th, ml:12th, ml:13th .
+
+# Time Peridos ----------------------------------------------------------------
+
+ml:5th a lit:TimePeriod ;
+  rdf:label "5de eeuw"@nl ;
+  rdf:label "5th century"@en .
+
+ml:6th a lit:TimePeriod ;
+  rdf:label "6de eeuw"@nl ;
+  rdf:label "6th century"@en .
+
+ml:7th a lit:TimePeriod ;
+  rdf:label "7de eeuw"@nl ;
+  rdf:label "7th century"@en .
+
+ml:8th a lit:TimePeriod ;
+  rdf:label "8de eeuw"@nl ;
+  rdf:label "8th century"@en .
+
+ml:9th a lit:TimePeriod ;
+  rdf:label "9de eeuw"@nl ;
+  rdf:label "9th century"@en .
+
+ml:10th a lit:TimePeriod ;
+  rdf:label "10de eeuw"@nl ;
+  rdf:label "10th century"@en .
+
+ml:11th a lit:TimePeriod ;
+  rdf:label "11de eeuw"@nl ;
+  rdf:label "11th century"@en .
+
+ml:12th a lit:TimePeriod ;
   rdf:label "12de eeuw"@nl ;
   rdf:label "12th century"@en .
 
-ml:13th a lit:Period ;
+ml:13th a lit:TimePeriod ;
   rdf:label "13de eeuw"@nl ;
   rdf:label "13th century"@en .
 
-ml:14th a lit:Period ;
+ml:14th a lit:TimePeriod ;
   rdf:label "14de eeuw"@nl ;
   rdf:label "14th century"@en .
 
-ml:15th a lit:Period ;
+ml:15th a lit:TimePeriod ;
   rdf:label "15de eeuw"@nl ;
   rdf:label "15th century"@en .
 
-# ml:16th a lit:Period ;
-#   rdf:label "16de eeuw"@nl ;
-#   rdf:label "16th century"@en .
+ml:16th a lit:TimePeriod ;
+  rdf:label "16de eeuw"@nl ;
+  rdf:label "16th century"@en .
 
-# ml:17th a lit:Period ;
-#   rdf:label "17de eeuw"@nl ;
-#   rdf:label "17th century"@en .
+ml:17th a lit:TimePeriod ;
+  rdf:label "17de eeuw"@nl ;
+  rdf:label "17th century"@en .
 
-# ml:18th a lit:Period ;
-#   rdf:label "18de eeuw"@nl ;
-#   rdf:label "18th century"@en .
+ml:18th a lit:TimePeriod ;
+  rdf:label "18de eeuw"@nl ;
+  rdf:label "18th century"@en .
 
-# ml:19th_first a lit:Period ;
-#   rdf:label "eerste helft van de 19de eeuw"@nl ;
-#   rdf:label "first half of the 19th century"@en .
+ml:19th_first a lit:TimePeriod ;
+  rdf:label "eerste helft van de 19de eeuw"@nl ;
+  rdf:label "first half of the 19th century"@en .
 
-# ml:19th_second a lit:Period ;
-#   rdf:label "tweede helft van de 19de eeuw"@nl ;
-#   rdf:label "second half of the 19th century"@en .
+ml:19th_second a lit:TimePeriod ;
+  rdf:label "tweede helft van de 19de eeuw"@nl ;
+  rdf:label "second half of the 19th century"@en .
+
+# Literary Types --------------------------------------------------------------
+
+ml:Poetry a lit:LiteraryType ;
+  rdf:label "poëzie"@nl .
+
+ml:Proza a lit:LiteraryType ;
+  rdf:label "proza"@nl .
+
+ml:Song a lit:LiteraryType ;
+  rdf:label "lied"@nl .
+
+# Traits ----------------------------------------------------------------------
+
+ml:Oral_Hand_Down a lit:Trait ;
+  rdf:label "mondeling overlevering"@nl .
+
+ml:Performed_by_Military_Poets a lit:Trait ;
+  rdf:label "gebracht door skopen/skalden"@nl .
+
+
+ml:Performed_by_Jugglers a lit:Trait ;
+  rdf:label "gebracht door jongleurs"@nl .
+
+ml:Performed_by_Troubadours a lit:Trait ;
+  rdf:label "gebracht door troubadours"@nl .
+
+ml:Festivities a lit:Trait ;
+  rdf:label "feestelijke gelegenheden"@nl .
+
+ml:Rhyme a lit:Trait ;
+  rdf:label "rijm"@nl .
+
+ml:Simple a lit:Trait ;
+  rdf:label "simpel"@nl .
+
+ml:Christian_Elements a lit:Trait ;
+  rdf:label "Christelijke elementen"@nl .
+
+ml:Hero_Stories a lit:Trait ;
+  rdf:label "Heldenverhalen"@nl .
+
+ml:Centered_Charles_the_Great a lit:Trait ;
+  rdf:label "gecentreerd rond Karel de Grote"@nl .
+
+ml:Feudal_Spirit a lit:Trait ;
+  rdf:label "feodale geest"@nl .
+
+lit:Courtly_Love_Ideal a lit:Trait ;
+  rdf:label "hoofse liefdesideaal"@nl ;
+  rdf:label "courtoisie"@fr .
+
+ml:Knightly a lit:Trait ;
+  rdf:label "ridderlijk"@nl .
+
+ml:Is_a_Troubadour a lit:Trait ;
+  rdf:label "is een troubadour"@nl .
+
+ml:Affective a lit:Trait ;
+  rdf:label "affectief"@nl .
+
+ml:Refined a lit:Trait ;
+  rdf:label "verfijnd"@nl .
+
+ml:Satirical a lit:Trait ;
+  rdf:label "satirisch"@nl .
+
+ml:Hedonistic a lit:Trait ;
+  rdf:label "hedonistisch"@nl .
+
+ml:Short a lit:Trait ;
+  rdf:label "kort"@nl .
+
+ml:Folksy a lit:Trait ;
+  rdf:label "volks"@nl .
+
+ml:Erotic a lit:Trait ;
+  rdf:label "erotisch"@nl .
+
+ml:Formal a lit:Trait ;
+  rdf:label "formeel"@nl .
  
-# -----------------------------
+# Genres ----------------------------------------------------------------------
 
-ml:British_Knight_Roman a lit:Genre ;
-  rdf:label "Britse Ridderroman"@nl .
+ml:Old_Germanic_Literature a lit:Genre ;
+  rdf:label "Oudgermaanse literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Early_Middle_Ages ;
+  lit:inTimePeriod
+    ml:8th ,
+    ml:9th ,
+    ml:10th ,
+    ml:11th ,
+    ml:12th ,
+    ml:13th ;
+  lit:characterizedBy
+    ml:Oral_Hand_Down ,
+    ml:Performed_by_Military_Poets ,
+    ml:Festivities ,
+    ml:Rhyme ,
+    ml:Simple ,
+    ml:Christian_Elements .
 
-ml:Eastern_Knight_Roman a lit:Genre ;
-  rdf:label "Oosterse Ridderroman"@nl .
+ml:Old_Scandinavian_Literature a lit:Genre ;
+  rdf:label "Oudscandinavische literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Early_Middle_Ages ;
+  lit:isSubGenreOf ml:Old_Germanic_Literature ;
+  lit:inTimePeriod ml:8th, ml:9th, ml:10th, ml:11th, ml:12th, ml:13th ;
+  lit:characterizedBy
+    ml:Oral_Hand_Down ,
+    ml:Old_Scandinavian_Literature .
 
-# -----------------------------
+ml:Chanson_de_geste a lit:Genre ;
+  rdf:label "Chanson de geste" ;
+  lit:hasPeriod ml:9th ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:characterizedBy
+     ml:Hero_Stories ,
+     ml:Centered_Charles_the_Great ,
+     ml:Feudal_Spirit ,
+     ml:Oral_Hand_Down ,
+     ml:Rhyme .
+
+ml:Courtly_Literature a lit:Genre ;
+  rdf:label "hoofse literatuur" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:characterizedBy
+    ml:Feudal_Spirit ,
+    ml:Christian_Elements ,
+    ml:Knightly ,
+    ml:Performed_by_Troubadours ,
+    ml:Courtly_Love_Ideal .
+
+ml:Courtly_Knight_Novel a lit:Genre ;
+  rdf:label "ridderroman" ;
+  lit:isSubGenreOf ml:Courtly_Literature ;
+  lit:hasPeriod lit:11th, lit:12th, lit:13th ;
+  lit:characterizedBy
+    ml:Knightly .
+
+ml:Classic_Knight_Novel a lit:Genre ;
+  lit:isSubGenreOf ml:Courtly_Knight_Novel ;
+  rdf:label "klassieke ridderroman" .
+
+ml:Britisch_Knight_Novel a lit:Genre ;
+  rdf:label "Britse ridderroman" ;
+  lit:isSubGenreOf ml:Courtly_Knight_Novel .
+
+ml:Eastern_Knight_Novel a lit:Genre ;
+  rdf:label "Oosterse ridderroman" ;
+  lit:isSubGenreOf ml:Courtly_Knight_Novel ;
+  lit:characterizedBy lit:Courtly_Love_Ideal .
+
+ml:TroubadourLyricism a lit:Genre ;
+  rdf:label "Troubadourslyriek" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:hasPeriod ml:11th .
+
+ml:Animal_Tale a lit:Genre ;
+  rdf:label "Dierenverhaal" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:hasPeriod ml:12th, ml:13th ;
+  lit:characterizedBy
+    ml:Satirical ,
+    ml:Feudal_Spirit .
+
+ml:VagabondLyricism a lit:Genre ;
+  rdf:label "Vagantenlyriek" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:hasPeriod ml:11th, ml:12th, ml:13th ;
+  lit:characterizedBy
+    ml:Hedonistic.
+
+ml:Civil_Short_Proza a lit:Genre ;
+  rdf:label "Burgelijke kortproza" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages .
+
+ml:Boerde a lit:Genre ;
+  rdf:label "Boerde" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:isSubGenreOf lit:Civil_Short_Proza ;
+  lit:characterizedBy
+    ml:Short ,
+    ml:Folksy ,
+    ml:Satirical ,
+    ml:Erotic .
+
+ml:Fabliau a lit:Genre ;
+  rdf:label "Fabliau" ;
+  lit:inLiteraturePeriod ml:High_Middle_Ages ;
+  lit:isSubGenreOf lit:Civil_Short_Proza ;
+  lit:characterizedBy
+    ml:Satirical ,
+    ml:Erotic ,
+    ml:Refined ,
+    ml:Formal .
+
+
+# Writers ---------------------------------------------------------------------
+
+ml:Bernard_De_Ventadour a lit:Writer ;
+  lit:name "Bernard de Ventadour" ;
+  lit:characterizedBy ml:Is_a_Troubadour .
 
 ml:Hendrik_van_Veldeke a lit:Writer ;
   lit:name "Hendrik van Veldeke" ;
-  lit:hasPeriod ml:12th .
-  
+  lit:characterizedBy ml:Is_a_Troubadour .
 
 ml:Chrétien_de_Troyes a lit:Writer ;
   lit:name "Chrétien de Troyes" ;
+  lit:characterizedBy ml:Is_a_Troubadour ;
   lit:hasPeriod ml:12th .
+
+ml:Walther_von_der_Vogelweide a lit:Writer ;
+  lit:name "Walther von der Vogelweide" ;
+  lit:characterizedBy ml:Is_a_Troubadour .
 
 ml:Wolfram_van_Eschenbach a lit:Writer ;
   lit:name "Wolfram van Eschenbach" ;
   lit:hasPeriod ml:13th .
 
 ml:Gottfried_von_Strassburg a lit:Writer ;
-  lit:name "Gottfried von Strassburg" ;
-  lit:hasPeriod ml:13th .
+  lit:name "Gottfried von Strassburg" .
+
+ml:Nivardus a lit:Writer ;
+  lit:name "Nivardus" .
 
 ml:Dante_Alighieri a lit:Writer ;
-  lit:name "Dante Alighieri" ;
-  lit:hasPeriod ml:13th ;
-  lit:hasPeriod ml:14th .
+  lit:name "Dante Alighieri" .
 
 ml:François_Villon a lit:Writer ;
-  lit:name "François Villon" ;
-  lit:hasPeriod ml:15th .
+  lit:name "François Villon" .
 
 ml:Giovanni_Boccaccio a lit:Writer ;
-  lit:name "Giovanni Boccaccio" ;
-  lit:hasPeriod ml:14th .
+  lit:name "Giovanni Boccaccio" .
 
 ml:Geoffrey_Chaucer a lit:Writer ;
-  lit:name "Geoffrey Chaucer" ;
-  lit:hasPeriod ml:14th .
+  lit:name "Geoffrey Chaucer" .
 
-# -----------------------------
+
+
+# Books -----------------------------------------------------------------------
+
+ml:Beowulf a lit:Book ;
+  lit:title "Beowulf" ;
+  lit:hasPeriod ml:10th ;
+  lit:hasGenre ml:Old_Germanic_Literature ;
+  lit:hasType ml:Proza .
+
+ml:Hildebrand a lit:Book ;
+  lit:title "Hildebrandslied" ;
+  lit:wiki <https://en.wikipedia.org/wiki/Hildebrandslied> ;
+  lit:hasPeriod ml:9th ;
+  lit:hasGenre ml:Old_Germanic_Literature ;
+  lit:hasType ml:Song .
+
+ml:Nibelungenlied a lit:Book ;
+  lit:title "Nibelungenlied" ;
+  lit:hasPeriod ml:13th , ml:14th ;
+  lit:hasGenre ml:Old_Germanic_Literature ;
+  lit:hasType ml:Song .
+
+ml:Eddaliederen a lit:Book ;
+  lit:title "Eddaliederen" ;
+  lit:hasPeriod ml:8th, ml:9th, ml:10th, ml:11th, ml:12th ;
+  lit:hasType ml:Song ;
+  lit:hasGenre ml:Old_Scandinavian_Literature .
+
+ml:Egils_Saga a lit:Book ;
+  lit:title "Egils Saga" ;
+  lit:hasType ml:Proza ;
+  lit:hasGenre ml:Old_Scandinavian_Literature .
+
+ml:Skala_Grimm_Sonar a lit:Book ;
+  lit:title "Skala Grimm Sonar" ;
+  lit:hasType ml:Proza ;
+  lit:hasGenre ml:Old_Scandinavian_Literature .
+
+ml:Chanson_de_Roland a lit:Book ;
+  lit:title "Chanson de Roland" ;
+  lit:hasPeriod ml:11th ;
+  lit:hasType ml:Song ;
+  lit:hasGenre ml:Chanson_de_geste .
+
+ml:Roman_d_Énéas a lit:Book ;
+  lit:title "Roman d'Énéas" ;
+  lit:wiki <https://fr.wikipedia.org/wiki/Roman_d%27%C3%89n%C3%A9as> ;
+  lit:hasPeriod ml:12th ;
+  ml:hasGenre ml:Classic_Knight_Novel ;
+  lit:hasType ml:Proza .
 
 ml:Eneide a lit:Book ;
   lit:title "Eneide" ;
+  lit:hasPeriod ml:12th ;
   lit:writtenBy ml:Hendrik_van_Veldeke ;
-  lit:hasGenre ml:British_Knight_Roman .
+  lit:hasGenre ml:Classic_Knight_Novel .
 
 ml:Sir_Gawain a lit:Book ;
   lit:title "Sir Gawain and the Green Knight" ;
+  lit:hasPeriod ml:12th ;
   lit:writtenBy ml:Chrétien_de_Troyes ;
-  lit:hasGenre ml:Eastern_Knight_Roman .
+  lit:hasGenre ml:British_Knight_Roman .
 
 ml:Parcifal a lit:Book ;
   lit:title "Parcifal" ;
-  lit:writtenBy ml:Wolfram_van_Eschenbach .
+  lit:hasPeriod ml:12th ;
+  lit:writtenBy ml:Wolfram_van_Eschenbach ;
+  lit:hasGenre ml:British_Knight_Roman .
 
 ml:Tristan a lit:Book ;
   lit:title "Tristan" ;
+  lit:hasPeriod ml:12th ;
   lit:writtenBy ml:Gottfried_von_Strassburg ;
-  lit:hasGenre ml:Eastern_Knight_Roman .
+  lit:hasGenre ml:British_Knight_Roman .
+
+ml:Floire_et_Blancheflor a lit:Book ;
+  lit:title "Floire et Blancheflor" ;
+  lit:hasPeriod ml:12th ;
+  lit:hasGenre ml:Eastern_Knight_Novel .
+
+ml:Ysengrimus a lit:Book ;
+  lit:title "Ysengrimus" ;
+  lit:hasPeriod ml:12th ;
+  lit:hasGenre ml:Animal_Tale .
+
+ml:Roman_de_Renart a lit:Book ;
+  lit:title "Roman de Renart" ;
+  lit:hasPeriod ml:12th , ml:13th ;
+  lit:hasGenre ml:Animal_Tale .
+
+ml:Van_den_Vos_Reynaerde a lit:Book ;
+  lit:title "van den Vos Reynaerde" ;
+  lit:hasPeriod ml:13th ;
+  lit:hasGenre ml:Animal_Tale .
+
+ml:Reinhart_Fuchs a lit:Book ;
+  lit:title "Reinhart Fuchs" ;
+  lit:hasGenre ml:Animal_Tale .
+
+ml:Carmina_Burana a lit:Book ;
+  lit:title "Carmina Burana" ;
+  lit:hasPeriod ml:13th ;
+  lit:hasGenre ml:VagabondLyricism .
 
 ml:La_Vita_Nuova a lit:Book ;
   lit:title "La Vita Nuova" ;
