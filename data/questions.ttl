@@ -9,11 +9,15 @@
 
 fc:QuestionFormat a owl:Class .
 
-fc:hasFormat a owl:DatatypeProperty ;
+fc:QuizContext a owl:Class .
+
+# ----------------------------------
+
+fc:hasPromptFormat a owl:DatatypeProperty ;
   rdfs:domain fc:QuestionFormat ;
   rdfs:range xsd:string .
 
-fc:hasContext a owl:ObjectProperty ;
+fc:hasPrompt a owl:ObjectProperty ;
   rdfs:domain fc:QuestionFormat ;
   rdfs:range lit:Period .
 
@@ -30,10 +34,33 @@ fc:hasRelation a owl:ObjectProperty .
   # rdfs:domain fc:QuestionFormat ;
   # rdfs:range xsd:int .
 
+
+fc:hasPrefix a owl:DatatypeProperty ;
+  rdfs:domain fc:QuizContext ;
+  rdfs:range xsd:string .
+
+# -------------------------------------
+
+q:QuizContext a fc:QuizContext ;
+  fc:hasPrefix "owl: <http://www.w3.org/2002/07/owl#>" ,
+              "rdfs: <http://www.w3.org/2000/01/rdf-schema#>" ,
+              "rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" ,
+              "xsd: <http://www.w3.org/2001/XMLSchema#>" ,
+
+              "fc: <file:///questions/ontology.ttl#>" ,
+              "q: <file:///questions/questions.ttl#>" ,
+              "lit: <file:///dataset/ontology.ttl#>" ,
+              "ml: <file:///dataset/data.ttl#>" .
+
+
 # Which work got written in (a ml:Period)? Suggest 4.
 q:Format1 a fc:QuestionFormat ;
-  fc:hasFormat "Welk werk werd geschreven in {}?" ;
-  fc:hasContext lit:Period ;
-  fc:hasAnswer lit:Book ;
-  fc:hasRelation (lit:writtenBy lit:hasPeriod) ;
+  rdf:label "Welk werk werd geschreven in periode X?"@nl ;
+  fc:hasPromptFormat ("Welk werk werd geschreven in" "?") ;
+  fc:hasPrompt """SELECT ?prompt WHERE { ?prompt a lit:Period .}""" ;
+  fc:hasOptions """SELECT ?answer WHERE { ?answer a lit:Book .}""" ;
+  fc:hasAnswer """SELECT ?answer WHERE {
+    ?answer lit:writtenBy ?author .
+    ?author lit:hasPeriod ?prompt .
+  }""" ;
   fc:shouldSuggest 4.

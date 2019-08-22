@@ -52,25 +52,25 @@ ml:15th a lit:Period ;
   rdf:label "15de eeuw"@nl ;
   rdf:label "15th century"@en .
 
-ml:16th a lit:Period ;
-  rdf:label "16de eeuw"@nl ;
-  rdf:label "16th century"@en .
+# ml:16th a lit:Period ;
+#   rdf:label "16de eeuw"@nl ;
+#   rdf:label "16th century"@en .
 
-ml:17th a lit:Period ;
-  rdf:label "17de eeuw"@nl ;
-  rdf:label "17th century"@en .
+# ml:17th a lit:Period ;
+#   rdf:label "17de eeuw"@nl ;
+#   rdf:label "17th century"@en .
 
-ml:18th a lit:Period ;
-  rdf:label "18de eeuw"@nl ;
-  rdf:label "18th century"@en .
+# ml:18th a lit:Period ;
+#   rdf:label "18de eeuw"@nl ;
+#   rdf:label "18th century"@en .
 
-ml:19th_first a lit:Period ;
-  rdf:label "eerste helft van de 19de eeuw"@nl ;
-  rdf:label "first half of the 19th century"@en .
+# ml:19th_first a lit:Period ;
+#   rdf:label "eerste helft van de 19de eeuw"@nl ;
+#   rdf:label "first half of the 19th century"@en .
 
-ml:19th_second a lit:Period ;
-  rdf:label "tweede helft van de 19de eeuw"@nl ;
-  rdf:label "second half of the 19th century"@en .
+# ml:19th_second a lit:Period ;
+#   rdf:label "tweede helft van de 19de eeuw"@nl ;
+#   rdf:label "second half of the 19th century"@en .
  
 # -----------------------------
 
@@ -84,87 +84,87 @@ ml:Eastern_Knight_Roman a lit:Genre ;
 
 ml:Hendrik_van_Veldeke a lit:Writer ;
   lit:name "Hendrik van Veldeke" ;
-  lit:hasPeriod lit:12th .
+  lit:hasPeriod ml:12th .
   
 
 ml:Chrétien_de_Troyes a lit:Writer ;
   lit:name "Chrétien de Troyes" ;
-  lit:hasPeriod lit:12th .
+  lit:hasPeriod ml:12th .
 
 ml:Wolfram_van_Eschenbach a lit:Writer ;
   lit:name "Wolfram van Eschenbach" ;
-  lit:hasPeriod lit:13th .
+  lit:hasPeriod ml:13th .
 
 ml:Gottfried_von_Strassburg a lit:Writer ;
   lit:name "Gottfried von Strassburg" ;
-  lit:hasPeriod lit:13th .
+  lit:hasPeriod ml:13th .
 
 ml:Dante_Alighieri a lit:Writer ;
   lit:name "Dante Alighieri" ;
-  lit:hasPeriod lit:13th ;
-  lit:hasPeriod lit:14th .
+  lit:hasPeriod ml:13th ;
+  lit:hasPeriod ml:14th .
 
 ml:François_Villon a lit:Writer ;
   lit:name "François Villon" ;
-  lit:hasPeriod lit:15th .
+  lit:hasPeriod ml:15th .
 
 ml:Giovanni_Boccaccio a lit:Writer ;
   lit:name "Giovanni Boccaccio" ;
-  lit:hasPeriod lit:14th .
+  lit:hasPeriod ml:14th .
 
 ml:Geoffrey_Chaucer a lit:Writer ;
   lit:name "Geoffrey Chaucer" ;
-  lit:hasPeriod lit:14th .
+  lit:hasPeriod ml:14th .
 
 # -----------------------------
 
 ml:Eneide a lit:Book ;
   lit:title "Eneide" ;
-  lit:writtenBy lit:Hendrik_van_Veldeke ;
-  lit:hasGenre lit:British_Knight_Roman .
+  lit:writtenBy ml:Hendrik_van_Veldeke ;
+  lit:hasGenre ml:British_Knight_Roman .
 
 ml:Sir_Gawain a lit:Book ;
   lit:title "Sir Gawain and the Green Knight" ;
-  lit:writtenBy lit:Chrétien_de_Troyes ;
-  lit:hasGenre lit:Eastern_Knight_Roman .
+  lit:writtenBy ml:Chrétien_de_Troyes ;
+  lit:hasGenre ml:Eastern_Knight_Roman .
 
 ml:Parcifal a lit:Book ;
   lit:title "Parcifal" ;
-  lit:writtenBy lit:Wolfram_van_Eschenbach .
+  lit:writtenBy ml:Wolfram_van_Eschenbach .
 
 ml:Tristan a lit:Book ;
   lit:title "Tristan" ;
-  lit:writtenBy lit:Gottfried_von_Strassburg ;
-  lit:hasGenre lit:Eastern_Knight_Roman .
+  lit:writtenBy ml:Gottfried_von_Strassburg ;
+  lit:hasGenre ml:Eastern_Knight_Roman .
 
 ml:La_Vita_Nuova a lit:Book ;
   lit:title "La Vita Nuova" ;
-  lit:writtenBy lit:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri .
 
 ml:De_Vulgari_Eloquentia a lit:Book ;
   lit:title "De Vulgari Eloquentia" ;
-  lit:writtenBy lit:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri .
 
 ml:De_Monarchia a lit:Book ;
   lit:title "De Monarchia" ;
-  lit:writtenBy lit:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri .
 
 ml:La_Divina_Commedia a lit:Book ;
   lit:title "La Divina Commedia" ;
-  lit:writtenBy lit:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri .
 
 ml:Le_Lais a lit:Book ;
   lit:title "Le Lais (Le petit Testament)" ;
-  lit:writtenBy lit:François_Villon .
+  lit:writtenBy ml:François_Villon .
 
 ml:Le_Grand_Testament a lit:Book ;
   lit:title "Le Grand Testament" ;
-  lit:writtenBy lit:François_Villon .
+  lit:writtenBy ml:François_Villon .
 
 ml:Il_Decamerone a lit:Book ;
   lit:title "Il Decamerone" ;
-  lit:writtenBy lit:Giovanni_Boccaccio .
+  lit:writtenBy ml:Giovanni_Boccaccio .
 
 ml:Canterbury_Tales a lit:Book ;
   lit:title "Canterbury Tales" ;
-  lit:writtenBy lit:Geoffrey_Chaucer .
+  lit:writtenBy ml:Geoffrey_Chaucer .
