@@ -114,6 +114,18 @@ ml:Renaissance a lit:LitaturePeriod ;
   rdf:label "Renaissance"@en ;
   lit:inTimePeriod ml:14th, ml:15th, ml:16th .
 
+ml:Mannerism a lit:LitaturePeriod ;
+  rdf:label "Maniërisme"@nl ;
+  lit:inTimePeriod ml:16th, ml:17th .
+
+ml:Barok a lit:LitaturePeriod ;
+  rdf:label "Barok"@nl ;
+  lit:inTimePeriod ml:16th, ml:17th .
+
+ml:Classicism a lit:LiteraturePeriod ;
+  rdf:label "Classicisme"@nl ;
+  lit:inTimePeriod ml:17th .
+
 # Time Peridos ----------------------------------------------------------------
 
 ml:5th a lit:TimePeriod ;
@@ -203,124 +215,79 @@ ml:Proza a lit:LiteraryType ;
 ml:Song a lit:LiteraryType ;
   rdf:label "lied"@nl .
 
+ml:Theatre a lit:LiteraryType ;
+  rdf:label "theater"@nl .
+
 # Traits ----------------------------------------------------------------------
 
-ml:Oral_Hand_Down a lit:Trait ;
-  rdf:label "mondeling overlevering"@nl .
-
-ml:Performed_by_Military_Poets a lit:Trait ;
-  rdf:label "gebracht door skopen/skalden"@nl .
-
-ml:Performed_by_Jugglers a lit:Trait ;
-  rdf:label "gebracht door jongleurs"@nl .
-
-ml:Performed_by_Troubadours a lit:Trait ;
-  rdf:label "gebracht door troubadours"@nl .
-
-ml:Festivities a lit:Trait ;
-  rdf:label "feestelijke gelegenheden"@nl .
-
-ml:Rhyme a lit:Trait ;
-  rdf:label "rijm"@nl .
-
-ml:Simple a lit:Trait ;
-  rdf:label "simpel"@nl .
-
-ml:Christian_Elements a lit:Trait ;
-  rdf:label "Christelijke elementen"@nl .
-
-ml:Hero_Stories a lit:Trait ;
-  rdf:label "Heldenverhalen"@nl .
-
-ml:Centered_Charles_the_Great a lit:Trait ;
-  rdf:label "gecentreerd rond Karel de Grote"@nl .
-
-ml:Feudal_Spirit a lit:Trait ;
-  rdf:label "feodale geest"@nl .
-
-ml:Love a lit:Trait ;
-  rdf:label "liefde"@nl .
-
-ml:Courtly a lit:Trait ;
-  rdf:label "hoofs"@nl . 
-
+ml:Oral_Hand_Down a lit:Trait ; rdf:label "mondeling overlevering"@nl .
+ml:Performed_by_Military_Poets a lit:Trait ; rdf:label "gebracht door skopen/skalden"@nl .
+ml:Performed_by_Jugglers a lit:Trait ; rdf:label "gebracht door jongleurs"@nl .
+ml:Performed_by_Troubadours a lit:Trait ; rdf:label "gebracht door troubadours"@nl .
+ml:Festivities a lit:Trait ; rdf:label "feestelijke gelegenheden"@nl .
+ml:Rhyme a lit:Trait ; rdf:label "rijm"@nl .
+ml:Simple a lit:Trait ; rdf:label "simpel"@nl .
+ml:Christian_Elements a lit:Trait ; rdf:label "Christelijke elementen"@nl .
+ml:Hero_Stories a lit:Trait ; rdf:label "Heldenverhalen"@nl .
+ml:Centered_Charles_the_Great a lit:Trait ; rdf:label "gecentreerd rond Karel de Grote"@nl .
+ml:Centered_King_Arthur a lit:Trait ; rdf:label "gecentreerd rond Koning Arthur"@nl .
+ml:Feudal_Spirit a lit:Trait ; rdf:label "feodale geest"@nl .
+ml:Love a lit:Trait ; rdf:label "liefde"@nl .
+ml:Courtly a lit:Trait ; rdf:label "hoofs"@nl . 
 ml:Courtly_Love_Ideal a lit:Trait ;
   rdf:label "hoofse liefdesideaal"@nl ;
   rdf:label "courtoisie"@fr .
-
-ml:Knightly a lit:Trait ;
-  rdf:label "ridderlijk"@nl .
-
-ml:Is_a_Troubadour a lit:Trait ;
-  rdf:label "is een troubadour"@nl .
-
-ml:Affective a lit:Trait ;
-  rdf:label "affectief"@nl .
-
-ml:Refined a lit:Trait ;
-  rdf:label "verfijnd"@nl .
-
-ml:Satirical a lit:Trait ;
-  rdf:label "satirisch"@nl .
-
-ml:Hedonistic a lit:Trait ;
-  rdf:label "hedonistisch"@nl .
-
-ml:Short a lit:Trait ;
-  rdf:label "kort"@nl .
-
-ml:Folksy a lit:Trait ;
-  rdf:label "volks"@nl .
-
-ml:Erotic a lit:Trait ;
-  rdf:label "erotisch"@nl .
-
-ml:Formal a lit:Trait ;
-  rdf:label "formeel"@nl .
-
-ml:Philosophical a lit:Trait ;
-  rdf:label "filosofisch"@nl .
-
-ml:Didactic a lit:Trait ;
-  rdf:label "didactisch"@nl .
-
-ml:Anecdotal a lit:Trait ;
-  rdf:label "anekdotaal"@nl .
-
-ml:Socially_Critical a lit:Trait ;
-  rdf:label "maatschappijkritisch"@nl .
-
-ml:Aristocratic a lit:Trait ;
-  rdf:label "aristocratisch"@nl .
-
-ml:Existential a lit:Trait ;
-  rdf:label "existentieel"@nl .
-
-ml:Wordly a lit:Trait ;
-  rdf:label "wereldlijk"@nl .
-
-ml:Vulgar a lit:Trait ;
-  rdf:label "vulgair"@nl .
-
-ml:Obscene a lit:Trait ;
-  rdf:label "obsceen"@nl .
-
-ml:Philology a lit:Trait ;
-  rdf:label "filologie"@nl .
-
-ml:Language_Care a lit:Trait ;
-  rdf:label "taalzorg"@nl .
-
-ml:Interdisciplinarity a lit:Trait ;
-  rdf:label "interdiscplinariteit"@nl .
-
-ml:Empiricism a lit:Trait ;
-  rdf:label "empirie"@nl .
-
-ml:Cosmopolotism a lit:Trait ;
-  rdf:label "cosmopolitisme"@nl .
+ml:Knightly a lit:Trait ; rdf:label "ridderlijk"@nl .
+ml:Is_a_Troubadour a lit:Trait ; rdf:label "is een troubadour"@nl .
+ml:Affective a lit:Trait ; rdf:label "affectief"@nl .
+ml:Refined a lit:Trait ; rdf:label "verfijnd"@nl .
+ml:Satirical a lit:Trait ; rdf:label "satirisch"@nl .
+ml:Hedonistic a lit:Trait ; rdf:label "hedonistisch"@nl .
+ml:Short a lit:Trait ; rdf:label "kort"@nl .
+ml:Folksy a lit:Trait ; rdf:label "volks"@nl .
+ml:Erotic a lit:Trait ; rdf:label "erotisch"@nl .
+ml:Formal a lit:Trait ; rdf:label "formeel"@nl .
+ml:Philosophical a lit:Trait ; rdf:label "filosofisch"@nl .
+ml:Didactic a lit:Trait ; rdf:label "didactisch"@nl .
+ml:Anecdotal a lit:Trait ; rdf:label "anekdotaal"@nl .
+ml:Socially_Critical a lit:Trait ; rdf:label "maatschappijkritisch"@nl .
+ml:Aristocratic a lit:Trait ; rdf:label "aristocratisch"@nl .
+ml:Existential a lit:Trait ; rdf:label "existentieel"@nl .
+ml:Wordly a lit:Trait ; rdf:label "wereldlijk"@nl .
+ml:Vulgar a lit:Trait ; rdf:label "vulgair"@nl .
+ml:Obscene a lit:Trait ; rdf:label "obsceen"@nl .
+ml:Philology a lit:Trait ; rdf:label "filologie"@nl .
+ml:Language_Care a lit:Trait ; rdf:label "taalzorg"@nl .
+ml:Interdisciplinarity a lit:Trait ; rdf:label "interdiscplinariteit"@nl .
+ml:Empiricism a lit:Trait ; rdf:label "empirie"@nl .
+ml:Cosmopolotism a lit:Trait ; rdf:label "cosmopolitisme"@nl .
+ml:Antropocentric a lit:Trait ; rdf:label "antrocentrisch"@nl .
+ml:Subjectivistic a lit:Trait ; rdf:label "subjectivistisch"@nl .
+ml:Classical_Themes a lit:Trait ; rdf:label "klassieke thema's"@nl .
+ml:Realism a lit:Trait ; rdf:label "realism"@nl .
+ml:FairyLike a lit:Trait ; rdf:label "feeëriek"@nl .
+ml:Keltic a lit:Trait ; rdf:label "Keltisch"@nl .
+ml:Escapism a lit:Trait ; rdf:label "escapisme"@nl .
+ml:Arcadisch a lit:Trait ; rdf:label "herderlijk"@nl .
+ml:Picaro a lit:Trait ; rdf:label "picaro"@nl .
+ml:Individualism a lit:Trait ; rdf:label "individualisme"@nl .
+ml:Showy a lit:Trait ; rdf:label "pronkerig"@nl .
+ml:Grandiose a lit:Trait ; rdf:label "groots"@nl .
+ml:Gnomic a lit:Trait ; rdf:label "gnomisch"@nl .
+ml:Aforistic a lit:Trait ; rdf:label "aforistisch"@nl .
+ml:Witty a lit:Trait ; rdf:label "spitsvondig"@nl .
+ml:Funny a lit:Trait ; rdf:label "grappig"@nl .
+ml:Character_Decomposition a lit:Trait ; rdf:label "karakterontleding"@nl .
+ml:Moralistic a lit:Trait ; rdf:label "moralistisch"@nl .
+ml:Psychological a lit:Trait ; rdf:label "psychologisch"@nl .
+ml:Pessimistic a lit:Trait ; rdf:label "pessimistisch"@nl .
+ml:Optimistic a lit:Trait ; rdf:label "optimistisch"@nl .
+ml:Rationality a lit:Trait ; rdf:label "rationaliteit"@nl .
+ml:Discipline a lit:Trait ; rdf:label "discipline"@nl .
  
+# -----------------------------------------------------------------------------
 # Genres ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 ml:Old_Germanic_Literature a lit:Genre ;
   rdf:label "Oudgermaanse literatuur"@nl ;
@@ -385,7 +352,9 @@ ml:Classic_Knight_Novel a lit:Genre ;
 
 ml:Britisch_Knight_Novel a lit:Genre ;
   rdf:label "Britse ridderroman"@nl ;
-  lit:isSubGenreOf ml:Courtly_Knight_Novel .
+  lit:isSubGenreOf ml:Courtly_Knight_Novel ;
+  lit:characterizedBy
+    ml:Centered_King_Arthur .
 
 ml:Eastern_Knight_Novel a lit:Genre ;
   rdf:label "Oosterse ridderroman"@nl ;
@@ -477,7 +446,139 @@ ml:Humanism a lit:Genre ;
     ml:Empiricism ,
     ml:Cosmopolotism .
 
+ml:Renaissance_Literature a lit:Genre ;
+  rdf:label "renaissance literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Renaissance ;
+  lit:characterizedBy
+    ml:Antropocentric ,
+    ml:Subjectivistic ,
+    ml:Classical_Themes ,
+    ml:Existential ,
+    ml:Formal ,
+    ml:Realism .
+
+ml:Renaissance_Drama a lit:Genre ;
+  rdf:label "renaissance drama"@nl ;
+  lit:inLiteraturePeriod ml:Renaissance ;
+  lit:inTimePeriod ml:Renaissance_Drama ;
+  lit:isSubGenreOf ml:Renaissance_Literature .
+
+ml:Modern_Novel a lit:Genre ;
+  rdf:label "moderne roman"@nl .
+
+ml:Amadic_Novel a lit:Genre ;
+  rdf:label "amadische roman"@nl ;
+  lit:inTimePeriod ml:16th ;
+  lit:characterizedBy
+    ml:Centered_King_Arthur ,
+    ml:FairyLike ,
+    ml:Keltic ,
+    ml:Knightly .
+
+ml:Pastoral_Novel a lit:Genre ;
+  rdf:label "pastorale roman"@nl ;
+  lit:inTimePeriod ml:16th ;
+  lit:characterizedBy
+    ml:Arcadisch ,
+    ml:Love .
+
+ml:Rascal_Novel a lit:Genre ;
+  rdf:label "picareske roman"@nl ;
+  lit:inTimePeriod ml:16th, ml:17th ;
+  lit:isSubGenreOf ml:Renaissance_Literature ;
+  lit:characterizedBy
+    ml:Picaro ,
+    ml:Hedonistic ,
+    ml:Socially_Critical ,
+    ml:Satirical .
+
+ml:Mannerism_Literature a lit:Genre ;
+  rdf:label "maniërism"@nl ;
+  lit:inLiteraturePeriod ml:Mannerism ;
+  lit:isSubGenreOf ml:Renaissance_Literature ;
+  lit:characterizedBy
+    ml:Aristocratic ,
+    ml:Courtly ,
+    ml:Refined ,
+    ml:Showy ,
+    ml:Grandiose ,
+    ml:Gnomic ,
+    ml:Formal .
+
+ml:Barok_Literature a lit:Genre ;
+  rdf:label "barok"@nl ;
+  lit:inLiteraturePeriod ml:Barok ;
+  lit:characterizedBy
+    ml:Wordly ,
+    ml:Christian_Elements ,
+    ml:Existential ,
+    ml:Hero_Stories .
+
+
+ml:Manneristic_Poetry a lit:Genre ;
+  rdf:label "Maniëristische poëzie"@nl ;
+  lit:inLiteraturePeriod ml:Mannerism ;
+  lit:isSubGenreOf lit:Mannerism_Literature .
+
+ml:Maximes a lit:Genre ;
+  rdf:label "Maximes"@nl ;
+  lit:inLiteraturePeriod ml:Mannerism ;
+  lit:isSubGenreOf lit:Mannerism_Literature ;
+  lit:characterizedBy
+    ml:Gnomic ,
+    ml:Witty ,
+    ml:Funny ,
+    ml:Short .
+
+ml:Manneristic_Letters a lit:Genre ;
+  rdf:label "Maniëristische brieven"@nl ;
+  lit:inLiteraturePeriod ml:Mannerism ;
+  lit:isSubGenreOf lit:Mannerism_Literature ;
+  lit:characterizedBy
+    ml:Existential .
+
+ml:Manneristic_Novel a lit:Genre ;
+  rdf:label "Maniëristische roman"@nl ;
+  lit:inLiteraturePeriod ml:Mannerism ;
+  lit:isSubGenreOf lit:Mannerism_Literature ;
+  lit:characterizedBy
+    ml:Psychological ,
+    ml:Moralistic ,
+    ml:Character_Decomposition ,
+    ml:Pessimistic .
+
+ml:Barokepos a lit:Genre ;
+  rdf:label "barokepos"@nl ;
+  lit:inLiteraturePeriod ml:Barok ;
+  lit:isSubGenreOf lit:Barok_Literature ;
+  lit:characterizedBy
+    ml:Hero_Stories .
+
+ml:Barokdrama a lit:Genre ;
+  rdf:label "barokdrama"@nl ;
+  lit:inLiteraturePeriod ml:Barok ;
+  lit:isSubGenreOf lit:Barok_Literature ;
+  lit:characterizedBy
+    ml:Christian_Elements .
+
+ml:Psychological_Novel a lit:Genre ;
+  rdf:label "pschogologische roman"@nl ;
+  lit:characterizedBy
+    ml:Psychological ,
+    ml:Character_Decomposition .
+
+ml:Classicist_Literature a lit:Genre ;
+  rdf:label "classicistische literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Classicism ;
+  lit:characterizedBy
+    lit:Courtly ,
+    lit:Formal ,
+    lit:Rationality ,
+    lit:Discipline .
+
+# -----------------------------------------------------------------------------
 # Writers ---------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 ml:Bernard_De_Ventadour a lit:Writer ;
   lit:name "Bernard de Ventadour" ;
@@ -556,7 +657,105 @@ ml:Michel_de_Montaigne a lit:Writer ;
   lit:name "Michel de Montaigne" ;
   lit:livedIn ml:16th .
 
+ml:Pierre_de_Ronsard a lit:Writer ;
+  lit:name "Pierre de Ronsard" ;
+  lit:livedIn ml:16th .
+
+ml:William_Shakespeare a lit:Writer ;
+  lit:name "William Shakespeare" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:Philip_Sydney a lit:Writer ;
+  lit:name "Philip Sydney" ;
+  lit:livedIn ml:16th .
+
+ml:Lope_de_Vega a lit:Writer ;
+  lit:name "Lope de Vega" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:Garci_de_Montalvo a lit:Writer ;
+  lit:name "Garci de Montalvo" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Margareta_van_Navarra a lit:Writer ;
+  lit:name "Margareta van Navarra" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Jorge_de_Montemayor a lit:Writer ;
+  lit:name "Jorge de Montemayor" ;
+  lit:livedIn ml:16th .
+
+ml:Cervantes a lit:Writer ;
+  lit:name "Cervantes" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:François_Rabelais a lit:Writer ;
+  lit:name "François Rabelais" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Niccolo_Machiavelli a lit:Writer ;
+  lit:name "Niccolo Machiavelli" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:John_Donne a lit:Writer ;
+  lit:name "John Donne" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:François_La_Rochefoucauld a lit:Writer ;
+  lit:name "François La Rochefoucauld" ;
+  lit:livedIn ml:17th .
+
+ml:Madame_De_Sévigné a lit:Writer ;
+  lit:name "Madame De Sévigné" ;
+  lit:livedIn ml:17th .
+
+ml:Madame_de_La_Fayette a lit:Writer ;
+  lit:name "Madame de La Fayette" ;
+  lit:livedIn ml:17th .
+
+ml:John_Milton a lit:Writer ;
+  lit:name "John Milton" ;
+  lit:livedIn ml:17th .
+
+ml:Don_Pedro_Calderon_de_la_Barca a lit:Writer ;
+  lit:name "Don Pedro Calderon de la Barca" ;
+  lit:livedIn ml:17th .
+
+ml:Joost_Van_den_Vondel a lit:Writer ;
+  lit:name "Joost van den Vondel" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:Nicolas_Boileau a lit:Writer ;
+  lit:name "Nicolas Boileau" ;
+  lit:livedIn ml:17th, ml:18th .
+
+ml:Jacques_Bénigne_Bossuet a lit:Writer ;
+  lit:name "Jacques-Bénigne Bossuet" ;
+  lit:livedIn ml:17th, ml:18th .
+
+ml:Francois_Fenelon a lit:Writer ;
+  lit:name "François Fénelon" ;
+  lit:livedIn ml:17th, ml:18th .
+
+ml:Francois_de_Malherbe a lit:Writer ;
+  lit:name "François de Malherbe" ;
+  lit:livedIn ml:16th, ml:17th .
+
+ml:Pierre_Corneille a lit:Writer ;
+  lit:name "Pierre Corneille" ;
+  lit:livedIn ml:17th .
+
+ml:Jean_Racine a lit:Writer ;
+  lit:name "Jean Racine" ;
+  lit:livedIn ml:17th .
+
+ml:Molière a lit:Writer ;
+  lit:name "Molière" ;
+  lit:livedIn ml:17th .
+
+# -----------------------------------------------------------------------------
 # Books -----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 ml:Beowulf a lit:Book ;
   lit:title "Beowulf" ;
@@ -755,3 +954,396 @@ ml:Essais a lit:Book ;
   lit:writtenBy ml:Michel_de_Montaigne ;
   lit:writtenIn ml:16th ;
   lit:hasGenre ml:Humanism .
+
+ml:Il_Canzoniere a lit:Book ;
+  lit:title "Il Canzoniere" ;
+  lit:writtenBy ml:Petrarca ;
+  lit:writtenIn ml:14th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Les_amours_de_Cassandre a lit:Book ;
+  lit:title "Les amours de Cassandre" ;
+  lit:writtenBy ml:Pierre_de_Ronsard ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Les_amours_de_Marie a lit:Book ;
+  lit:title "Les amours de Marie" ;
+  lit:writtenBy ml:Pierre_de_Ronsard ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Sonnets_pour_Hélene a lit:Book ;
+  lit:title "Sonnets pour Hélene" ;
+  lit:writtenBy ml:Pierre_de_Ronsard ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Abrège_d_art_poétique a lit:Book ;
+  lit:title "Abrège d'art poétique" ;
+  lit:writtenBy ml:Pierre_de_Ronsard ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Astrophel_and_Stella a lit:Book ;
+  lit:title "Astrophel and Stella" ;
+  lit:writtenBy ml:Philip_Sydney ;
+  lit:writtenIn lit:16th ;
+  lit:hasGenre ml:Renaissance_Literature .
+
+ml:Venus_and_Adonis a lit:Book ;
+  lit:title "Venus and Adonis" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature ;
+  lit:hasType lit:Poetry .
+
+ml:Rape_of_Lucrece a lit:Book ;
+  lit:title "The Rape of Lucrece" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature ;
+  lit:hasType lit:Poetry .
+
+ml:Titus_Andronicus a lit:Book ;
+  lit:title "Titus Andronicus" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Literature ;
+  lit:hasType lit:Theatre .
+
+ml:Kingsdramas a lit:Book ;
+  lit:title "Henry IV, V, VI, Richard II, III" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Romeo_and_Juliet a lit:Book ;
+  lit:title "Romeo and Juliet" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Two_Gentlemen_of_Verona a lit:Book ;
+  lit:title "The Two Gentlemen of Verona" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:The_Taming_of_the_Shrew a lit:Book ;
+  lit:title "The Taming of the Shrew" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Midsummernight_s_Dream a lit:Book ;
+  lit:title "Midsummernight's dream" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:The_Merchant_of_Venice a lit:Book ;
+  lit:title "The Merchant of Venice" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:The_Merry_Wives_of_Windsor a lit:Book ;
+  lit:title "The Merry Wives of Windsor" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Much_Ado_About_Nothing a lit:Book ;
+  lit:title "Much Ado About Nothing" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Julius_Caesar a lit:Book ;
+  lit:title "Julius_Caesar" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Hamlet a lit:Book ;
+  lit:title "Hamlet" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Macbeth a lit:Book ;
+  lit:title "Macbeth" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Othello a lit:Book ;
+  lit:title "Othello" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:King_Lear a lit:Book ;
+  lit:title "King Lear" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Twelfth_Night a lit:Book ;
+  lit:title "Twelft Night" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:All_s_Well_That_Ends_Well a lit:Book ;
+  lit:title "All's Well That Ends Well" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Measure_for_Measure a lit:Book ;
+  lit:title "Measure_for_Measure" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Cymbeline a lit:Book ;
+  lit:title "Cymbeline" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:The_Winter_s_Tale a lit:Book ;
+  lit:title "The Winter's Tale" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:The_Tempest a lit:Book ;
+  lit:title "The Tempest" ;
+  lit:writtenBy ml:William_Shakespeare ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Renaissance_Drama .
+
+ml:Heptaméron a lit:Book ;
+  lit:title "Heptaméron" ;
+  lit:writtenBy ml:Margareta_van_Navarra ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Novelle .
+
+ml:Amadis_de_Gaula a lit:Book ;
+  lit:title "Amadis de Gaula";
+  lit:writtenBy ml:Garci_de_Montalvo ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Amadic_Novel .
+
+ml:Diana a lit:Book ;
+  lit:title "Diana" ;
+  lit:writtenBy ml:Jorge_de_Montemayor ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Pastoral_Novel .
+
+ml:La_vida_de_Lazarillo_de_Tormes a lit:Book ;
+  lit:title "La vida de Lazarillo de Tormes" ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Rascal_Novel .
+
+ml:Don_Quichote a lit:Book ;
+  lit:title "Don Quichote" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Cervantes ;
+  lit:hasGenre ml:Modern_Novel ;
+  lit:characterizedBy
+    ml:Realism ,
+    ml:Existential ,
+    ml:Individualism .
+
+ml:Gargantua_et_Pantagrual a lit:Book ;
+  lit:title "Gargantua et Pantagruel" ;
+  lit:writtenIn ml:16th ;
+  lit:writtenBy ml:Rabelais ;
+  lit:hasGenre ml:Modern_Novel ;
+  lit:characterizedBy
+    ml:Realism ,
+    ml:Individualism ,
+    ml:Humanism .
+
+ml:Il_Principe a lit:Book ;
+  lit:title "Il Principe" ;
+  lit:writtenIn ml:16th ;
+  lit:writtenBy ml:Niccolo_Machiavelli .
+
+ml:Réflexions_out_sentences_et_maximes_morales a lit:Book ;
+  lit:title "Réflexions ou sentences et maximes morales" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:François_La_Rochefoucauld ;
+  lit:hasGenre ml:Maximes .
+
+ml:Society_Letters a lit:Book ;
+  lit:title "Society Letters" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Madame_De_Sévigné ;
+  lit:hasGenre ml:Manneristic_Letters .
+
+ml:La_Princesse_de_Clèves a lit:Book ;
+  lit:title "La Princesse de Clèves" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Madame_de_La_Fayette ;
+  lit:hasGenre 
+    ml:Manneristic_Novel ,
+    ml:Psychological_Novel .
+
+ml:Paradise_Lost a lit:Book ;
+  lit:title "Paradis Lost" ;
+  lit:writtenBy ml:John_Milton ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Barokepos .
+
+ml:La_vida_es_sueño a lit:Book ;
+  lit:title "La vida es sueño" ;
+  lit:writtenBy ml:Don_Pedro_Calderon_de_la_Barca ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Barokdrama .
+
+ml:El_gran_theatro_del_mundo a lit:Book ;
+  lit:title "El gran theatro del mundo" ;
+  lit:writtenBy ml:Don_Pedro_Calderon_de_la_Barca ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Barokdrama .
+
+ml:Lucifer a lit:Book ;
+  lit:title "Lucifer" ;
+  lit:writtenBy ml:Joost_Van_den_Vondel ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Barokdrama .
+
+ml:Adam_in_ballingschap a lit:Book ;
+  lit:title "Adam in ballingschap" ;
+  lit:writtenBy ml:Joost_Van_den_Vondel ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Barokdrama .
+
+ml:Art_Poétique a lit:Book ;
+  lit:title "Art Poétique" ;
+  lit:writtenBy ml:Nicolas_Boileau ;
+  lit:writtenIn ml:17th ;
+  lit:hasGenre ml:Classicist_Literature .
+
+ml:Les_oraisons_funebres a lit:Book ;
+  lit:title "Les oraisons funébres" ;
+  lit:writtenBy ml:Jacques_Bénigne_Bossuet ;
+  lit:writtenIn ml:17th .
+
+ml:Telemaque a lit:Book ;
+  lit:title "Télémaque" ;
+  lit:writtenBy ml:Francois_Fenelon ;
+  lit:writtenIn ml:17th .
+
+ml:Le_Cid a lit:Book ;
+  lit:title "Le Cid" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Pierre_Corneille ;
+  lit:hasGenre ml:Classicist_Literature .
+
+ml:Horace a lit:Book ;
+  lit:title "Horace" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Pierre_Corneille ;
+  lit:hasGenre ml:Classicist_Literature .
+
+ml:Cinna a lit:Book ;
+  lit:title "Cinna" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Pierre_Corneille ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Polyeucte a lit:Book ;
+  lit:title "Polyeucte" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Pierre_Corneille ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Andromaque a lit:Book ;
+  lit:title "Andromaque" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Britannicus a lit:Book ;
+  lit:title "Britannicus" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Bérénice a lit:Book ;
+  lit:title "Bérénice" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Mithridate a lit:Book ;
+  lit:title "Mithridate" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Iphegénie a lit:Book ;
+  lit:title "Iphegénie" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Phèdre a lit:Book ;
+  lit:title "Phèdre" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Jean_Racine ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Les_precieus_ridicules a lit:Book ;
+  lit:title "Les précieuses ridicules" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:L_ecole_de_maris a lit:Book ;
+  lit:title "L'école de maris" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:L_ecole_de_femmes a lit:Book ;
+  lit:title "L'école de femmes" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Tartuffe_ou_l_imposteur a lit:Book ;
+  lit:title "Tartuffe ou l'imposteur" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Le_misanthrope a lit:Book ;
+  lit:title "Le misanthrope" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Le_bourgeois_gentilhomme a lit:Book ;
+  lit:title "Le bourgeois gentilhomme" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Les_femmes_savantes a lit:Book ;
+  lit:title "Les femmes savantes" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .
+
+lit:Le_malade_imaginaire a lit:Book ;
+  lit:title "Le malade imaginaire" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:Molière ;
+  lit:hasGenre ml:Classicist_Literature .

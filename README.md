@@ -4,6 +4,8 @@ A CLI tool to do flashcard style quizes based on RDF datasets.
 
 ![Screenshot](./docs/images/screenshot1.png)
 
+TO DO: Merge answer and prompt queries
+
 ## README To Do
 
 - You write the question formats yourself

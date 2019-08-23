@@ -81,8 +81,8 @@ q:Format1 a fc:QuestionFormat ;
 
 # ?author wrote in which timeperiod?
 q:Format2 a fc:QuestionFormat ;
-  rdf:label "Auteur X schreef zijn in werken in welke periode" ;
-  fc:hasPromptFormat ("" " schreef zijn werken in...") ;
+  rdf:label "Auteur X schreef zijn/haar werken in welke periode" ;
+  fc:hasPromptFormat ("" " schreef zijn werken in de...") ;
   fc:shouldSuggest 4 ;
 
   # The prompt is the name of an author with at least one book with a known time period
@@ -135,3 +135,27 @@ q:Format3 a fc:QuestionFormat ;
     ?writer lit:name ?answer .
   }""".
 
+# ?book werd geschreven in...
+q:Format4 a fc:QuestionFormat ;
+  rdf:label "Book X werd geschreven in de..." ;
+  fc:hasPromptFormat ("'" "' werd geschreven in de...") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?book a lit:Book .
+    ?book lit:title ?prompt .
+    ?book lit:writtenIn ?period .
+    ?period a ?lit:TimePeriod .
+  }""";
+
+  fc:hasOptions """SELECT ?answer WHERE {
+    ?answer a lit:TimePeriod .
+    ?book lit:writtenIn ?answer .
+  }""";
+
+  fc:hasAnswer """SELECT ?answer WHERE {
+    ?book a lit:Book .
+    ?book lit:title ?prompt .
+    ?book lit:writtenIn ?answer.
+    ?answer a lit:TimePeriod .
+  }""".
