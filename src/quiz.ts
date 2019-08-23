@@ -134,6 +134,7 @@ export class Quiz {
     }
 
     const answer = random(answers);
+    // TODO: Fix, sometimes doesn't work, e.g. format2 dante 2 times 14 available
     const wrongAnswers = new Set(options.filter(o => !new Set(answers).has(o)));
     const possibleSuggestions = Array.from(wrongAnswers);
     shuffle(possibleSuggestions);
@@ -157,6 +158,10 @@ export class Quiz {
 
   public formatOption(questionFormat: Node, option: Node): string {
     return this.labelify(option);
+  }
+
+  public formatAnswer(questionFormat: Node, answer: Node): string {
+    return this.labelify(answer);
   }
 
   private querify(sparqlQuery: string): Query {

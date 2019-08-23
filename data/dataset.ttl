@@ -70,7 +70,7 @@ lit:isSubGenreOf a owl:ObjectProperty ;
   rdfs:domain lit:Genre ;
   rdfs:range lit:Genre .
 
-# Cultural Periods ------------------------------------------------------------
+# Literature Periods ----------------------------------------------------------
 
 ml:Middle_Ages a lit:LitaturePeriod ;
   rdf:label "Middeleeuwen"@nl ;
@@ -103,6 +103,16 @@ ml:High_Middle_Ages a lit:LitaturePeriod ;
   rdf:label "Hoog-middeleeuwen"@nl ;
   rdf:label "High Middle Ages"@en ;
   lit:inTimePeriod ml:11th, ml:12th, ml:13th .
+
+ml:Late_Middle_Ages a lit:LiteraturePeriod ;
+  rdf:label "late Middeleeuwen"@nl ;
+  rdf:label "late Middle Ages"@en ;
+  lit:inTimePeriod ml:13th, ml:14th, ml:15th .
+
+ml:Renaissance a lit:LitaturePeriod ;
+  rdf:label "Renaissance"@nl ;
+  rdf:label "Renaissance"@en ;
+  lit:inTimePeriod ml:14th, ml:15th, ml:16th .
 
 # Time Peridos ----------------------------------------------------------------
 
@@ -170,6 +180,18 @@ ml:19th_second a lit:TimePeriod ;
   rdf:label "tweede helft van de 19de eeuw"@nl ;
   rdf:label "second half of the 19th century"@en .
 
+ml:20th_pre_1st_war a lit:TimePeriod ;
+  rdf:label "20ste eeuw voor de eerste wereldoorlog"@nl ;
+  rdf:label "20th century before the first world war"@en .
+
+ml:20th_interbellum a lit:TimePeriod ;
+  rdf:label "interbellum van de 20ste eeuw"@nl ;
+  rdf:label "interbellum of the 20th century"@en .
+
+ml:20th_post_2nd_war a lit:TimePeriod ;
+  rdf:label "20ste eeuw na de tweede wereldoorlog"@nl ;
+  rdf:label "20th century after second world war"@en .
+
 # Literary Types --------------------------------------------------------------
 
 ml:Poetry a lit:LiteraryType ;
@@ -188,7 +210,6 @@ ml:Oral_Hand_Down a lit:Trait ;
 
 ml:Performed_by_Military_Poets a lit:Trait ;
   rdf:label "gebracht door skopen/skalden"@nl .
-
 
 ml:Performed_by_Jugglers a lit:Trait ;
   rdf:label "gebracht door jongleurs"@nl .
@@ -217,7 +238,13 @@ ml:Centered_Charles_the_Great a lit:Trait ;
 ml:Feudal_Spirit a lit:Trait ;
   rdf:label "feodale geest"@nl .
 
-lit:Courtly_Love_Ideal a lit:Trait ;
+ml:Love a lit:Trait ;
+  rdf:label "liefde"@nl .
+
+ml:Courtly a lit:Trait ;
+  rdf:label "hoofs"@nl . 
+
+ml:Courtly_Love_Ideal a lit:Trait ;
   rdf:label "hoofse liefdesideaal"@nl ;
   rdf:label "courtoisie"@fr .
 
@@ -250,6 +277,48 @@ ml:Erotic a lit:Trait ;
 
 ml:Formal a lit:Trait ;
   rdf:label "formeel"@nl .
+
+ml:Philosophical a lit:Trait ;
+  rdf:label "filosofisch"@nl .
+
+ml:Didactic a lit:Trait ;
+  rdf:label "didactisch"@nl .
+
+ml:Anecdotal a lit:Trait ;
+  rdf:label "anekdotaal"@nl .
+
+ml:Socially_Critical a lit:Trait ;
+  rdf:label "maatschappijkritisch"@nl .
+
+ml:Aristocratic a lit:Trait ;
+  rdf:label "aristocratisch"@nl .
+
+ml:Existential a lit:Trait ;
+  rdf:label "existentieel"@nl .
+
+ml:Wordly a lit:Trait ;
+  rdf:label "wereldlijk"@nl .
+
+ml:Vulgar a lit:Trait ;
+  rdf:label "vulgair"@nl .
+
+ml:Obscene a lit:Trait ;
+  rdf:label "obsceen"@nl .
+
+ml:Philology a lit:Trait ;
+  rdf:label "filologie"@nl .
+
+ml:Language_Care a lit:Trait ;
+  rdf:label "taalzorg"@nl .
+
+ml:Interdisciplinarity a lit:Trait ;
+  rdf:label "interdiscplinariteit"@nl .
+
+ml:Empiricism a lit:Trait ;
+  rdf:label "empirie"@nl .
+
+ml:Cosmopolotism a lit:Trait ;
+  rdf:label "cosmopolitisme"@nl .
  
 # Genres ----------------------------------------------------------------------
 
@@ -281,7 +350,7 @@ ml:Old_Scandinavian_Literature a lit:Genre ;
     ml:Old_Scandinavian_Literature .
 
 ml:Chanson_de_geste a lit:Genre ;
-  rdf:label "Chanson de geste" ;
+  rdf:label "Chanson de geste"@nl ;
   lit:inTimePeriod ml:9th ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:characterizedBy
@@ -292,42 +361,52 @@ ml:Chanson_de_geste a lit:Genre ;
      ml:Rhyme .
 
 ml:Courtly_Literature a lit:Genre ;
-  rdf:label "hoofse literatuur" ;
+  rdf:label "hoofse literatuur"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:characterizedBy
     ml:Feudal_Spirit ,
     ml:Christian_Elements ,
     ml:Knightly ,
     ml:Performed_by_Troubadours ,
-    ml:Courtly_Love_Ideal .
+    ml:Courtly_Love_Ideal ,
+    ml:Courtly ,
+    ml:Love .
 
 ml:Courtly_Knight_Novel a lit:Genre ;
-  rdf:label "ridderroman" ;
+  rdf:label "ridderroman"@nl ;
   lit:isSubGenreOf ml:Courtly_Literature ;
-  lit:inTimePeriod lit:11th, lit:12th, lit:13th ;
+  lit:inTimePeriod ml:11th, ml:12th, ml:13th ;
   lit:characterizedBy
     ml:Knightly .
 
 ml:Classic_Knight_Novel a lit:Genre ;
   lit:isSubGenreOf ml:Courtly_Knight_Novel ;
-  rdf:label "klassieke ridderroman" .
+  rdf:label "klassieke ridderroman"@nl .
 
 ml:Britisch_Knight_Novel a lit:Genre ;
-  rdf:label "Britse ridderroman" ;
+  rdf:label "Britse ridderroman"@nl ;
   lit:isSubGenreOf ml:Courtly_Knight_Novel .
 
 ml:Eastern_Knight_Novel a lit:Genre ;
-  rdf:label "Oosterse ridderroman" ;
+  rdf:label "Oosterse ridderroman"@nl ;
   lit:isSubGenreOf ml:Courtly_Knight_Novel ;
-  lit:characterizedBy lit:Courtly_Love_Ideal .
+  lit:characterizedBy
+    ml:Courtly_Love_Ideal ,
+    ml:Love ,
+    ml:Courtly .
 
 ml:TroubadourLyricism a lit:Genre ;
-  rdf:label "Troubadourslyriek" ;
+  rdf:label "Troubadourslyriek"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
-  lit:inTimePeriod ml:11th .
+  lit:isSubGenreOf lit:Courtly_Literature ;
+  lit:inTimePeriod ml:11th ;
+  lit:characterizedBy 
+    lit:Performed_by_Troubadours ,
+    lit:Performed_by_Jugglers ,
+    lit:Courtly_Love_Ideal .
 
 ml:Animal_Tale a lit:Genre ;
-  rdf:label "Dierenverhaal" ;
+  rdf:label "Dierenverhaal"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:inTimePeriod ml:12th, ml:13th ;
   lit:characterizedBy
@@ -335,7 +414,7 @@ ml:Animal_Tale a lit:Genre ;
     ml:Feudal_Spirit .
 
 ml:VagabondLyricism a lit:Genre ;
-  rdf:label "Vagantenlyriek" ;
+  rdf:label "Vagantenlyriek"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:inTimePeriod ml:11th, ml:12th, ml:13th ;
   lit:characterizedBy
@@ -346,7 +425,7 @@ ml:Civil_Short_Proza a lit:Genre ;
   lit:inLiteraturePeriod ml:High_Middle_Ages .
 
 ml:Boerde a lit:Genre ;
-  rdf:label "Boerde" ;
+  rdf:label "Boerde"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:isSubGenreOf lit:Civil_Short_Proza ;
   lit:characterizedBy
@@ -356,7 +435,7 @@ ml:Boerde a lit:Genre ;
     ml:Erotic .
 
 ml:Fabliau a lit:Genre ;
-  rdf:label "Fabliau" ;
+  rdf:label "Fabliau"@nl ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:isSubGenreOf lit:Civil_Short_Proza ;
   lit:characterizedBy
@@ -365,6 +444,38 @@ ml:Fabliau a lit:Genre ;
     ml:Refined ,
     ml:Formal .
 
+ml:Scholasticism a lit:Genre ;
+  rdf:label "Scholastiek"@nl ;
+  lit:inLiteraturePeriod ml:Late_Middle_Ages ;
+  lit:characterizedBy
+    ml:Christian_Elements ,
+    ml:Philosophical .
+
+ml:Dolce_stil_nuovo a lit:Genre ;
+  rdf:label "Dolce stil nuovo"@nl ;
+  lit:inLiteraturePeriod ml:Late_Middle_Ages ;
+  lit:characterizedBy
+    ml:Courtly_Love_Ideal ,
+    ml:Love ,
+    ml:Courtly ,
+    ml:Christian_Elements .
+
+ml:Novelle a lit:Genre ;
+  rdf:label "novelle"@nl ;
+  lit:inLiteraturePeriod ml:Late_Middle_Ages ;
+  lit:characterizedBy
+    ml:Short ,
+    ml:Anecdotal .
+
+ml:Humanism a lit:Genre ;
+  rdf:label "humanisme"@nl ;
+  lit:inLiteraturePeriod ml:Renaissance ;
+  lit:characterizedBy
+    ml:Philology ,
+    ml:Language_Care ,
+    ml:Interdisciplinarity ,
+    ml:Empiricism ,
+    ml:Cosmopolotism .
 
 # Writers ---------------------------------------------------------------------
 
@@ -395,19 +506,55 @@ ml:Gottfried_von_Strassburg a lit:Writer ;
 ml:Nivardus a lit:Writer ;
   lit:name "Nivardus" .
 
+ml:Albertus_Magnus a lit:Writer ;
+  lit:name "Albertus Magnus" ;
+  lit:livedIn ml:13th .
+
+ml:Thomas_van_Aquino a lit:Writer ;
+  lit:name "Thomas van Aquino" ;
+  lit:livedIn ml:13th .
+
 ml:Dante_Alighieri a lit:Writer ;
-  lit:name "Dante Alighieri" .
+  lit:name "Dante Alighieri" ;
+  lit:livedIn ml:13th , ml:14th .
 
 ml:François_Villon a lit:Writer ;
-  lit:name "François Villon" .
+  lit:name "François Villon" ;
+  lit:livedIn ml:15th .
 
 ml:Giovanni_Boccaccio a lit:Writer ;
-  lit:name "Giovanni Boccaccio" .
+  lit:name "Giovanni Boccaccio" ;
+  lit:livedIn ml:14th .
 
 ml:Geoffrey_Chaucer a lit:Writer ;
-  lit:name "Geoffrey Chaucer" .
+  lit:name "Geoffrey Chaucer" ;
+  lit:livedIn ml:14th .
 
+ml:Franco_Sacchetti a lit:Writer ;
+  lit:name "Franco Sachetti" .
 
+ml:Baldessare_Castiglione a lit:Writer ;
+  lit:name "Baldessare Castiglione" .
+
+ml:Pietro_Aretino a lit:Writer ;
+  lit:name "Pietro Aretino" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Francesco_Petrarca a lit:Writer ;
+  lit:name "Francesco Petrarca" ;
+  lit:livedIn ml:14th .
+
+ml:Erasmus a lit:Writer ;
+  lit:name "Desiderius Erasmus" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Thomas_More a lit:Writer ;
+  lit:name "Thomas More" ;
+  lit:livedIn ml:15th, ml:16th .
+
+ml:Michel_de_Montaigne a lit:Writer ;
+  lit:name "Michel de Montaigne" ;
+  lit:livedIn ml:16th .
 
 # Books -----------------------------------------------------------------------
 
@@ -512,34 +659,99 @@ ml:Carmina_Burana a lit:Book ;
   lit:writtenIn ml:13th ;
   lit:hasGenre ml:VagabondLyricism .
 
+ml:Summa_Theologiae a lit:Book ;
+  lit:title "Summa Theologiae" ;
+  lit:writtenIn ml:13th ;
+  lit:writtenBy ml:Thomas_van_Aquino ;
+  lit:hasGenre ml:Scholasticism .
+
 ml:La_Vita_Nuova a lit:Book ;
   lit:title "La Vita Nuova" ;
-  lit:writtenBy ml:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri ;
+  lit:writtenIn ml:13th ;
+  lit:hasGenre ml:Dolce_stil_nuovo .
 
 ml:De_Vulgari_Eloquentia a lit:Book ;
   lit:title "De Vulgari Eloquentia" ;
-  lit:writtenBy ml:Dante_Alighieri .
+  lit:writtenIn ml:14th ;
+  lit:writtenBy ml:Dante_Alighieri ;
+  lit:characterizedBy ml:Didactic .
 
 ml:De_Monarchia a lit:Book ;
   lit:title "De Monarchia" ;
-  lit:writtenBy ml:Dante_Alighieri .
+  lit:writtenIn ml:14th ;
+  lit:writtenBy ml:Dante_Alighieri ;
+  lit:characterizedBy ml:Didactic .
+
+ml:Il_Convivio a lit:Book ;
+  lit:title "Il Convivio" ;
+  lit:writtenBy ml:Dante_Alighieri ;
+  lit:writtenIn ml:14th ;
+  lit:characterizedBy ml:Didactic .
 
 ml:La_Divina_Commedia a lit:Book ;
   lit:title "La Divina Commedia" ;
-  lit:writtenBy ml:Dante_Alighieri .
+  lit:writtenBy ml:Dante_Alighieri ;
+  lit:writtenIn ml:14th .
 
 ml:Le_Lais a lit:Book ;
   lit:title "Le Lais (Le petit Testament)" ;
-  lit:writtenBy ml:François_Villon .
+  lit:writtenBy ml:François_Villon ;
+  lit:writtenIn ml:15th ;
+  lit:hasType ml:Poetry .
 
 ml:Le_Grand_Testament a lit:Book ;
   lit:title "Le Grand Testament" ;
-  lit:writtenBy ml:François_Villon .
+  lit:writtenBy ml:François_Villon ;
+  lit:hasType ml:Poetry .
 
 ml:Il_Decamerone a lit:Book ;
   lit:title "Il Decamerone" ;
-  lit:writtenBy ml:Giovanni_Boccaccio .
+  lit:writtenBy ml:Giovanni_Boccaccio ;
+  lit:writtenIn ml:14th ;
+  lit:hasGenre ml:Novelle ;
+  lit:characterizedBy
+    ml:Satirical ,
+    ml:Erotic ,
+    ml:Anecdotal ,
+    ml:Socially_Critical .
+
+ml:Il_Trecentonovelle a lit:Book ;
+  lit:title "Il Trecentenovelle" ;
+  lit:writtenBy lit:Franco_Sacchetti ;
+  lit:writtenIn ml:14th ;
+  lit:hasGenre ml:Novelle .
 
 ml:Canterbury_Tales a lit:Book ;
   lit:title "Canterbury Tales" ;
-  lit:writtenBy ml:Geoffrey_Chaucer .
+  lit:writtenBy ml:Geoffrey_Chaucer ;
+  lit:writtenIn ml:14th ;
+  lit:hasGenre ml:Novelle .
+
+ml:Il_Cortegiano a lit:Book ;
+  lit:title "Il Cortegiano" ;
+  lit:writtenBy ml:Baldessare_Castiglione ;
+  lit:writtenIn ml:16th ;
+  lit:characterizedBy
+    ml:Wordly ,
+    ml:Hedonistic ,
+    ml:Aristocratic .
+
+ml:Laus_Stultitiae a lit:Book ;
+  lit:title "Lof der Zotheid" ;
+  lit:writtenBy ml:Erasmus ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Humanism ;
+  lit:characterizedBy ml:Satirical .
+
+ml:Utopia a lit:Book ;
+  lit:title "Utopia" ;
+  lit:writtenBy ml:Thomas_More ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Humanism .
+
+ml:Essais a lit:Book ;
+  lit:title "Essais" ;
+  lit:writtenBy ml:Michel_de_Montaigne ;
+  lit:writtenIn ml:16th ;
+  lit:hasGenre ml:Humanism .

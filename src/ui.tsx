@@ -69,20 +69,19 @@ class Question extends Component<QuestionProps> {
     const quiz = this.context;
     const { number, onNextQuestion } = this.props;
     const { answer, suggestions, prompt, format } = quiz.getQuestion();
-    const correct = randomBetween(0, suggestions.length);
+    const correctIndex = randomBetween(0, suggestions.length);
     const options = [...suggestions];
-    options.splice(correct, 0, answer);
+    options.splice(correctIndex, 0, answer);
 
     const onSelect = (item: Item) => {
+      const correct = quiz.formatAnswer(format, answer);
       if (item.value === "skipped") {
-        return onNextQuestion({ answer: "skipped", correct: answer.value });
+        return onNextQuestion({ answer: "skipped", correct });
       }
-
-      if (item.value === correct) {
-        return onNextQuestion({ answer: "correct", correct: answer.value });
+      if (item.value === correctIndex) {
+        return onNextQuestion({ answer: "correct", correct });
       }
-
-      return onNextQuestion({ answer: "wrong", correct: answer.value });
+      return onNextQuestion({ answer: "wrong", correct });
     };
 
     return (

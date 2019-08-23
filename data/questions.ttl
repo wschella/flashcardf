@@ -57,6 +57,7 @@ q:QuizContext a fc:QuizContext ;
 q:Format1 a fc:QuestionFormat ;
   rdf:label "Welk werk werd geschreven in periode X?"@nl ;
   fc:hasPromptFormat ("Welk werk werd geschreven in de " "?") ;
+  fc:shouldSuggest 4 ;
 
   # The prompt is a period with at least one book
   fc:hasPrompt """SELECT ?prompt WHERE {
@@ -65,15 +66,72 @@ q:Format1 a fc:QuestionFormat ;
      ?book a lit:Book .
   }""" ;
 
-  # The other options are book titles
+  # The other options are book titles for books which have a known period
   fc:hasOptions """SELECT ?answer WHERE {
     ?book lit:title ?answer .
     ?book a lit:Book .
+    ?book lit:writtenIn ?arbitraryPeriod .
   }""" ;
 
-  # THe correct answers are books written in that period
+  # The correct answers are books written in that period
   fc:hasAnswer """SELECT ?answer WHERE {
     ?book lit:title ?answer .
     ?book lit:writtenIn ?prompt .
-  }""" ;
-  fc:shouldSuggest 4.
+  }""" .
+
+# ?author wrote in which timeperiod?
+q:Format2 a fc:QuestionFormat ;
+  rdf:label "Auteur X schreef zijn in werken in welke periode" ;
+  fc:hasPromptFormat ("" " schreef zijn werken in...") ;
+  fc:shouldSuggest 4 ;
+
+  # The prompt is the name of an author with at least one book with a known time period
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?writer a lit:Writer .
+    ?writer lit:name ?prompt .
+    ?book lit:writtenBy ?writer .
+    ?book lit:writtenIn ?anyKnownPeriod .
+    ?anyKnownPeriod a lit:TimePeriod .
+  }
+  """ ;
+
+  # The options are time periods where at least one known book got written
+  fc:hasOptions """SELECT ?answer WHERE {
+    ?answer a lit:TimePeriod .
+    ?book lit:writtenIn ?answer .
+  }
+  """ ;
+
+  # The answers are time periods in which an author with that name wrote a book
+  fc:hasAnswer """SELECT ?answer WHERE {
+    ?writer lit:name ?prompt .
+    ?book lit:writtenBy ?writer .
+    ?book lit:writtenIn ?answer .
+    ?answer a lit:TimePeriod .
+  }""" .
+
+# ?book is een boek van ...
+q:Format3 a fc:QuestionFormat ;
+  rdf:label "Book X is een werk van..." ;
+  fc:hasPromptFormat ("'" "' is een werk van...") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?book a lit:Book .
+    ?book lit:title ?prompt .
+    ?book lit:writtenBy ?writer .
+    ?writer a lit:Writer .
+  }""";
+
+  fc:hasOptions """SELECT ?answer WHERE {
+    ?writer a lit:Writer .
+    ?writer lit:name ?answer .
+  }""";
+
+  fc:hasAnswer """SELECT ?answer WHERE {
+    ?book lit:title ?prompt .
+    ?book lit:writtenBy ?writer .
+    ?writer a lit:Writer .
+    ?writer lit:name ?answer .
+  }""".
+
