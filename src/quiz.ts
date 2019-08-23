@@ -107,6 +107,9 @@ export class Quiz {
 
     const promptSPARQL = this.questions.anyValue(format, FC("hasPrompt"));
     const prompts = this.dataset.querySync(this.querify(promptSPARQL));
+    if (prompts.length <= 0) {
+      throw new Error(`Couldn't find valid prompts for format ${format}`);
+    }
     const prompt = random(prompts)["?prompt"];
 
     const optionsSPARQL = this.questions.anyValue(format, FC("hasOptions"));

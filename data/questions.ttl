@@ -57,13 +57,23 @@ q:QuizContext a fc:QuizContext ;
 q:Format1 a fc:QuestionFormat ;
   rdf:label "Welk werk werd geschreven in periode X?"@nl ;
   fc:hasPromptFormat ("Welk werk werd geschreven in de " "?") ;
-  fc:hasPrompt """SELECT ?prompt WHERE { ?prompt a lit:Period .}""" ;
+
+  # The prompt is a period with at least one book
+  fc:hasPrompt """SELECT ?prompt WHERE {
+     ?prompt a lit:TimePeriod .
+     ?book lit:writtenIn ?prompt .
+     ?book a lit:Book .
+  }""" ;
+
+  # The other options are book titles
   fc:hasOptions """SELECT ?answer WHERE {
     ?book lit:title ?answer .
     ?book a lit:Book .
   }""" ;
+
+  # THe correct answers are books written in that period
   fc:hasAnswer """SELECT ?answer WHERE {
     ?book lit:title ?answer .
-    ?book lit:hasPeriod ?prompt .
+    ?book lit:writtenIn ?prompt .
   }""" ;
   fc:shouldSuggest 4.

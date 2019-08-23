@@ -22,8 +22,6 @@ lit:Trait a owl:Class .
 
 lit:LiteraryType a owl:Class .
 
-lit:hasPeriod a owl:ObjectProperty .
-
 lit:writtenBy a owl:ObjectProperty ;
   rdfs:domain lit:Book ;
   rdfs:range lit:Writer .
@@ -47,6 +45,14 @@ lit:inLiteraturePeriod a owl:ObjectProperty ;
 lit:inTimePeriod a owl:ObjectProperty ;
   rdfs:domain lit:LitaturePeriod ;
   rdfs:domain lit:Genre ;
+  rdfs:range lit:TimePeriod .
+
+lit:writtenIn a owl:ObjectProperty ;
+  rdfs:domain lit:Book ;
+  rdfs:range lit:TimePeriod .
+
+lit:livedIn a owl:ObjectProperty ;
+  rdfs:domain lit:Writer ;
   rdfs:range lit:TimePeriod .
 
 lit:characterizedBy a owl:ObjectProperty ;
@@ -276,7 +282,7 @@ ml:Old_Scandinavian_Literature a lit:Genre ;
 
 ml:Chanson_de_geste a lit:Genre ;
   rdf:label "Chanson de geste" ;
-  lit:hasPeriod ml:9th ;
+  lit:inTimePeriod ml:9th ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
   lit:characterizedBy
      ml:Hero_Stories ,
@@ -298,7 +304,7 @@ ml:Courtly_Literature a lit:Genre ;
 ml:Courtly_Knight_Novel a lit:Genre ;
   rdf:label "ridderroman" ;
   lit:isSubGenreOf ml:Courtly_Literature ;
-  lit:hasPeriod lit:11th, lit:12th, lit:13th ;
+  lit:inTimePeriod lit:11th, lit:12th, lit:13th ;
   lit:characterizedBy
     ml:Knightly .
 
@@ -318,12 +324,12 @@ ml:Eastern_Knight_Novel a lit:Genre ;
 ml:TroubadourLyricism a lit:Genre ;
   rdf:label "Troubadourslyriek" ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
-  lit:hasPeriod ml:11th .
+  lit:inTimePeriod ml:11th .
 
 ml:Animal_Tale a lit:Genre ;
   rdf:label "Dierenverhaal" ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
-  lit:hasPeriod ml:12th, ml:13th ;
+  lit:inTimePeriod ml:12th, ml:13th ;
   lit:characterizedBy
     ml:Satirical ,
     ml:Feudal_Spirit .
@@ -331,7 +337,7 @@ ml:Animal_Tale a lit:Genre ;
 ml:VagabondLyricism a lit:Genre ;
   rdf:label "Vagantenlyriek" ;
   lit:inLiteraturePeriod ml:High_Middle_Ages ;
-  lit:hasPeriod ml:11th, ml:12th, ml:13th ;
+  lit:inTimePeriod ml:11th, ml:12th, ml:13th ;
   lit:characterizedBy
     ml:Hedonistic.
 
@@ -373,7 +379,7 @@ ml:Hendrik_van_Veldeke a lit:Writer ;
 ml:Chrétien_de_Troyes a lit:Writer ;
   lit:name "Chrétien de Troyes" ;
   lit:characterizedBy ml:Is_a_Troubadour ;
-  lit:hasPeriod ml:12th .
+  lit:livedIn ml:12th .
 
 ml:Walther_von_der_Vogelweide a lit:Writer ;
   lit:name "Walther von der Vogelweide" ;
@@ -381,7 +387,7 @@ ml:Walther_von_der_Vogelweide a lit:Writer ;
 
 ml:Wolfram_van_Eschenbach a lit:Writer ;
   lit:name "Wolfram van Eschenbach" ;
-  lit:hasPeriod ml:13th .
+  lit:livedIn ml:13th .
 
 ml:Gottfried_von_Strassburg a lit:Writer ;
   lit:name "Gottfried von Strassburg" .
@@ -407,26 +413,26 @@ ml:Geoffrey_Chaucer a lit:Writer ;
 
 ml:Beowulf a lit:Book ;
   lit:title "Beowulf" ;
-  lit:hasPeriod ml:10th ;
+  lit:writtenIn ml:10th ;
   lit:hasGenre ml:Old_Germanic_Literature ;
   lit:hasType ml:Proza .
 
 ml:Hildebrand a lit:Book ;
   lit:title "Hildebrandslied" ;
   lit:wiki <https://en.wikipedia.org/wiki/Hildebrandslied> ;
-  lit:hasPeriod ml:9th ;
+  lit:writtenIn ml:9th ;
   lit:hasGenre ml:Old_Germanic_Literature ;
   lit:hasType ml:Song .
 
 ml:Nibelungenlied a lit:Book ;
   lit:title "Nibelungenlied" ;
-  lit:hasPeriod ml:13th , ml:14th ;
+  lit:writtenIn ml:13th , ml:14th ;
   lit:hasGenre ml:Old_Germanic_Literature ;
   lit:hasType ml:Song .
 
 ml:Eddaliederen a lit:Book ;
   lit:title "Eddaliederen" ;
-  lit:hasPeriod ml:8th, ml:9th, ml:10th, ml:11th, ml:12th ;
+  lit:writtenIn ml:13th ;
   lit:hasType ml:Song ;
   lit:hasGenre ml:Old_Scandinavian_Literature .
 
@@ -442,59 +448,59 @@ ml:Skala_Grimm_Sonar a lit:Book ;
 
 ml:Chanson_de_Roland a lit:Book ;
   lit:title "Chanson de Roland" ;
-  lit:hasPeriod ml:11th ;
+  lit:writtenIn ml:11th ;
   lit:hasType ml:Song ;
   lit:hasGenre ml:Chanson_de_geste .
 
 ml:Roman_d_Énéas a lit:Book ;
   lit:title "Roman d'Énéas" ;
   lit:wiki <https://fr.wikipedia.org/wiki/Roman_d%27%C3%89n%C3%A9as> ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   ml:hasGenre ml:Classic_Knight_Novel ;
   lit:hasType ml:Proza .
 
 ml:Eneide a lit:Book ;
   lit:title "Eneide" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:writtenBy ml:Hendrik_van_Veldeke ;
   lit:hasGenre ml:Classic_Knight_Novel .
 
 ml:Sir_Gawain a lit:Book ;
   lit:title "Sir Gawain and the Green Knight" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:writtenBy ml:Chrétien_de_Troyes ;
   lit:hasGenre ml:British_Knight_Roman .
 
 ml:Parcifal a lit:Book ;
   lit:title "Parcifal" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:writtenBy ml:Wolfram_van_Eschenbach ;
   lit:hasGenre ml:British_Knight_Roman .
 
 ml:Tristan a lit:Book ;
   lit:title "Tristan" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:writtenBy ml:Gottfried_von_Strassburg ;
   lit:hasGenre ml:British_Knight_Roman .
 
 ml:Floire_et_Blancheflor a lit:Book ;
   lit:title "Floire et Blancheflor" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:hasGenre ml:Eastern_Knight_Novel .
 
 ml:Ysengrimus a lit:Book ;
   lit:title "Ysengrimus" ;
-  lit:hasPeriod ml:12th ;
+  lit:writtenIn ml:12th ;
   lit:hasGenre ml:Animal_Tale .
 
 ml:Roman_de_Renart a lit:Book ;
   lit:title "Roman de Renart" ;
-  lit:hasPeriod ml:12th , ml:13th ;
+  lit:writtenIn ml:12th , ml:13th ;
   lit:hasGenre ml:Animal_Tale .
 
 ml:Van_den_Vos_Reynaerde a lit:Book ;
   lit:title "van den Vos Reynaerde" ;
-  lit:hasPeriod ml:13th ;
+  lit:writtenIn ml:13th ;
   lit:hasGenre ml:Animal_Tale .
 
 ml:Reinhart_Fuchs a lit:Book ;
@@ -503,7 +509,7 @@ ml:Reinhart_Fuchs a lit:Book ;
 
 ml:Carmina_Burana a lit:Book ;
   lit:title "Carmina Burana" ;
-  lit:hasPeriod ml:13th ;
+  lit:writtenIn ml:13th ;
   lit:hasGenre ml:VagabondLyricism .
 
 ml:La_Vita_Nuova a lit:Book ;
