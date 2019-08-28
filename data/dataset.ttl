@@ -126,6 +126,23 @@ ml:Classicism a lit:LiteraturePeriod ;
   rdf:label "Classicisme"@nl ;
   lit:inTimePeriod ml:17th .
 
+ml:PseudoClassicism a lit:LitaturePeriod ;
+  rdf:label "pseudo-classicisme"@nl ;
+  lit:inTimePeriod ml:18th_first, ml:18th_second .
+
+ml:Rococo a lit:LitaturePeriod ;
+  rdf:label "rococo"@nl ;
+  lit:inTimePeriod ml:18th_second .
+
+ml:NeoClassicism a lit:LitaturePeriod ;
+  rdf:label "neo-classicisme"@nl .
+
+ml:The_Enlightenment a lit:LitaturePeriod ;
+  rdf:label "de Verlichting"@nl .
+
+ml:Pre_Romanticism a lit:LiteraturePeriod ;
+  rdf:label "preromantiek"@nl .
+
 # Time Peridos ----------------------------------------------------------------
 
 ml:5th a lit:TimePeriod ;
@@ -180,9 +197,13 @@ ml:17th a lit:TimePeriod ;
   rdf:label "17de eeuw"@nl ;
   rdf:label "17th century"@en .
 
-ml:18th a lit:TimePeriod ;
-  rdf:label "18de eeuw"@nl ;
-  rdf:label "18th century"@en .
+ml:18th_first a lit:TimePeriod ;
+  rdf:label "eerste helft van de 18de eeuw"@nl ;
+  rdf:label "first half of the 18th century"@en .
+
+ml:18th_second a lit:TimePeriod ;
+  rdf:label "tweede helft van de 18de eeuw"@nl ;
+  rdf:label "second half of the 18th century"@en .
 
 ml:19th_first a lit:TimePeriod ;
   rdf:label "eerste helft van de 19de eeuw"@nl ;
@@ -284,7 +305,25 @@ ml:Pessimistic a lit:Trait ; rdf:label "pessimistisch"@nl .
 ml:Optimistic a lit:Trait ; rdf:label "optimistisch"@nl .
 ml:Rationality a lit:Trait ; rdf:label "rationaliteit"@nl .
 ml:Discipline a lit:Trait ; rdf:label "discipline"@nl .
- 
+ml:Tragic a lit:Trait ; rdf:label "tragisch"@nl .
+ml:Happy_End a lit:Trait ; rdf:label "happy end"@nl .
+ml:Melancholic a lit:Trait ; rdf:label "melancholisch"@nl .
+ml:Sentimental a lit:Trait ; rdf:label "sentimental"@nl .
+ml:Idyllic a lit:Trait ; rdf:label "idyllisch"@nl .
+ml:Ornamental a lit:Trait ; rdf:label "ornamentaal"@nl .
+ml:Democratic a lit:Trait ; rdf:label "democratisch"@nl .
+ml:Scepticism a lit:Trait ; rdf:label "scepticisme"@nl .
+ml:Tolerance a lit:Trait ; rdf:label "verdraagzaamheid"@nl .
+ml:Pragmatism a lit:Trait ; rdf:label "pragmatisme"@nl .
+ml:Reflexive a lit:Trait ; rdf:label "reflexief"@nl .
+ml:Emotional a lit:Trait ; rdf:label "emotioneel"@nl .
+ml:Originality a lit:Trait ; rdf:label "originalitieit"@nl .
+ml:Sadness a lit:Trait ; rdf:label "verdriet"@nl .
+ml:Nature a lit:Trait ; rdf:label "natuur"@nl .
+ml:Supernatural a lit:Trait ; rdf:label "bovennatuurlijke"@nl .
+ml:Nostalgic a lit:Trait ; rdf:label "nostalgisch"@nl .
+ml:Cult_of_the_Pristine a lit:Trait ; rdf:label "cultus van het ongerepte"@nl .
+
 # -----------------------------------------------------------------------------
 # Genres ----------------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -571,10 +610,110 @@ ml:Classicist_Literature a lit:Genre ;
   rdf:label "classicistische literatuur"@nl ;
   lit:inLiteraturePeriod ml:Classicism ;
   lit:characterizedBy
-    lit:Courtly ,
-    lit:Formal ,
-    lit:Rationality ,
-    lit:Discipline .
+    ml:Courtly ,
+    ml:Formal ,
+    ml:Rationality ,
+    ml:Discipline .
+
+ml:PseudoClassicist_Comedy_of_Manners a lit:Genre ;
+  rdf:label "zedenkomedie van het pseudoclassicisme"@nl ;
+  lit:inLiteraturePeriod ml:PseudoClassicism ;
+  lit:characterizedBy
+    ml:Love ,
+    ml:Psychological .
+
+ml:Restoration_Comedy a lit:Genre ;
+  rdf:label "restauratie-komedie"@nl ;
+  lit:inLiteraturePeriod ml:PseudoClassicism ;
+  lit:isSubGenreOf ml:PseudoClassicist_Comedy_of_Manners ;
+  lit:characterizedBy
+    ml:Vulgar ,
+    ml:Socially_Critical ,
+    ml:Funny .
+
+ml:Comedie_Larmoyante a lit:Genre ;
+  rdf:label "Comédie larmoyante"@nl ;
+  lit:inLiteraturePeriod ml:PseudoClassicism ;
+  lit:isSubGenreOf ml:PseudoClassicist_Comedy_of_Manners ;
+  lit:characterizedBy
+    ml:Tragic ,
+    ml:Happy_End ,
+    ml:Sentimental ,
+    ml:Wordly ,
+    ml:Idyllic ,
+    ml:Melancholic .
+
+ml:Rococo_Literature a lit:Genre ;
+  rdf:label "rococo-literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Rococo ;
+  lit:characterizedBy
+    ml:Showy ,
+    ml:Ornamental ,
+    ml:Wordly ,
+    ml:Hedonistic ,
+    ml:Melancholic ,
+    ml:Erotic ,
+    ml:Arcadisch ,
+    ml:Existential .
+
+ml:Enlightenment_Literature a lit:Genre ;
+  rdf:label "Verlichtings-literatuur"@nl ;
+  lit:inLiteraturePeriod ml:The_Enlightenment ;
+  lit:characterizedBy
+    ml:Rationality ,
+    ml:Democratic ,
+    ml:Scepticism ,
+    ml:Tolerance ,
+    ml:Pragmatism .
+
+ml:Philosophical_Enlightenment_Literature a lit:Genre ;
+  rdf:label "filosofische verlichtingsliteratuur"@nl ;
+  lit:inLiteraturePeriod ml:The_Enlightenment ;
+  lit:isSubGenreOf ml:Enlightenment_Literature ;
+  lit:characterizedBy 
+    ml:Philosophical .
+
+ml:English_Civil_Novel_of_Manners a lit:Genre ;
+  rdf:label "burgerlijke zedenroman in Engeland"@nl ;
+  lit:inLiteraturePeriod ml:The_Enlightenment ;
+  lit:isSubGenreOf ml:Enlightenment_Literature ;
+  lit:characterizedBy
+    ml:Satirical ,
+    ml:Wordly ,
+    ml:Reflexive .
+
+ml:Sentimental_Novel_of_Manners a lit:Genre ;
+  rdf:label "sentimentele zedenroman"@nl ;
+  lit:inLiteraturePeriod ml:The_Enlightenment ;
+  lit:isSubGenreOf ml:Enlightenment_Literature ;
+  lit:characterizedBy
+    ml:Psychological ,
+    ml:Sentimental .
+
+ml:Pre_Romanticism_Literature a lit:Genre ;
+  rdf:label "preromantische literatuur"@nl ;
+  lit:inLiteraturePeriod ml:Pre_Romanticism ;
+  lit:characterizedBy 
+    ml:Escapism ,
+    ml:Emotional ,
+    ml:Originality ,
+    ml:Subjectivistic ,
+    ml:Nature ,
+    ml:Supernatural ,
+    ml:Cult_of_the_Pristine ,
+    ml:Nostalgic ,
+    ml:Love ,
+    ml:Sadness .
+
+ml:Graveyard_Poetry a lit:Genre ;
+  rdf:label "graf- en maanpoëzie"@nl ;
+  lit:inLiteraturePeriod ml:Pre_Romanticism ;
+  lit:isSubGenreOf ml:Pre_Romanticism_Literature .
+
+ml:Gothic_Novel a lit:Genre ;
+  rdf:label "griezelroman"@nl ;
+  lit:inLiteraturePeriod ml:Pre_Romanticism ;
+  lit:isSubGenreOf ml:Pre_Romanticism_Literature .
 
 # -----------------------------------------------------------------------------
 # Writers ---------------------------------------------------------------------
@@ -752,6 +891,98 @@ ml:Jean_Racine a lit:Writer ;
 ml:Molière a lit:Writer ;
   lit:name "Molière" ;
   lit:livedIn ml:17th .
+
+ml:William_Congreve a lit:Writer ;
+  lit:name "William Congreve" .
+
+ml:Alexander_Pope a lit:Writer ;
+  lit:name "Alexander Pope" ;
+  lit:livedIn ml:17th, ml:18th_first .
+
+ml:John_Gay a lit:Writer ;
+  lit:name "John Gay" ;
+  lit:livedIn ml:17th, ml:18th_first .
+
+ml:Pierre_de_Mariveaux a lit:Writer ;
+  lit:name "Pierre de Mariveaux" ;
+  lit:livedIn ml:17th, ml:18th_first, ml:18th_second .
+
+ml:Pierre_de_Beaumarchais a lit:Writer ;
+  lit:name "Pierre de Beaumarchais" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Carl_Micheal_Bellman a lit:Writer ;
+  lit:name "Carl Micheal Bellman" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Christoph_Martin_Wieland a lit:Writer ;
+  lit:name "Christoph Martin Wieland" ;
+  lit:livedIn ml:17th, ml:18th_first, ml:18th_second .
+
+ml:Gotthold_Ephraim_Lessing a lit:Writer ;
+  lit:name "Gotthold Ephraim Lessing" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Dennis_Diderot a lit:Writer ;
+  lit:name "Denis Diderot" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Voltaire a lit:Writer ;
+  lit:name "Voltaire" ;
+  lit:livedIn ml:17th, ml:18th_first .
+
+ml:Daniel_Defoe a lit:Writer ;
+  lit:name "Daniel Defoe" ;
+  lit:livedIn ml:17th, ml:18th_first .
+
+ml:Jonathan_Swift a lit:Writer ;
+  lit:name "Jonathan Swift" ;
+  lit:livedIn ml:17th, ml:18th_first .
+
+ml:Henry_Fielding a lit:Writer ;
+  lit:name "Henry Fielding" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Samuel_Richardson a lit:Writer ;
+  lit:name "Samuel_Richardson" ;
+  lit:livedIn ml:17th, ml:18th_first, ml:18th_second .
+
+ml:Lawrence_Sterne a lit:Writer ;
+  lit:name "Lawrence Sterne" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Antoine_Francois_Prevost a lit:Writer ;
+  lit:name "Antoine-François Prevost" ;
+  lit:livedIn ml:17th, ml:18th_first, ml:18th_second .
+
+ml:Jean_Jacques_Rousseau a lit:Writer ;
+  lit:name "Jean Jacques Rousseau" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Johann_Wolfgang_von_Goethe a lit:Writer ;
+  lit:name "Johann Wolfgang von Goethe" ;
+  lit:livedIn ml:18th_first, ml:18th_second, ml:19th_first .
+
+ml:James_Thomson a lit:Writer ;
+  lit:name "James Thomson" ;
+  lit:livedIn ml:18th_first .
+
+ml:Thomas_Gray a lit:Writer ;
+  lit:name "Thomas Gray" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
+
+ml:Horace_Walpole a lit:Writer ;
+  lit:name "Horace Walpole" .
+
+ml:Ann_Radcliffe a lit:Writer ;
+  lit:name "Ann Radcliffe" .
+
+ml:MG_Lewis a lit:Writer ;
+  lit:name "M.G. Lewis" .
+
+ml:James_MacPherson a lit:Writer ;
+  lit:name "James MacPherson" ;
+  lit:livedIn ml:18th_first, ml:18th_second .
 
 # -----------------------------------------------------------------------------
 # Books -----------------------------------------------------------------------
@@ -1061,7 +1292,7 @@ ml:Much_Ado_About_Nothing a lit:Book ;
   lit:hasGenre ml:Renaissance_Drama .
 
 ml:Julius_Caesar a lit:Book ;
-  lit:title "Julius_Caesar" ;
+  lit:title "Julius Caesar" ;
   lit:writtenBy ml:William_Shakespeare ;
   lit:writtenIn ml:17th ;
   lit:hasGenre ml:Renaissance_Drama .
@@ -1258,92 +1489,358 @@ ml:Cinna a lit:Book ;
   lit:writtenBy ml:Pierre_Corneille ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Polyeucte a lit:Book ;
+ml:Polyeucte a lit:Book ;
   lit:title "Polyeucte" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Pierre_Corneille ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Andromaque a lit:Book ;
+ml:Andromaque a lit:Book ;
   lit:title "Andromaque" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Britannicus a lit:Book ;
+ml:Britannicus a lit:Book ;
   lit:title "Britannicus" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Bérénice a lit:Book ;
+ml:Bérénice a lit:Book ;
   lit:title "Bérénice" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Mithridate a lit:Book ;
+ml:Mithridate a lit:Book ;
   lit:title "Mithridate" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Iphegénie a lit:Book ;
+ml:Iphegénie a lit:Book ;
   lit:title "Iphegénie" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Phèdre a lit:Book ;
+ml:Phèdre a lit:Book ;
   lit:title "Phèdre" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Jean_Racine ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Les_precieus_ridicules a lit:Book ;
+ml:Les_precieus_ridicules a lit:Book ;
   lit:title "Les précieuses ridicules" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:L_ecole_de_maris a lit:Book ;
+ml:L_ecole_de_maris a lit:Book ;
   lit:title "L'école de maris" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:L_ecole_de_femmes a lit:Book ;
+ml:L_ecole_de_femmes a lit:Book ;
   lit:title "L'école de femmes" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Tartuffe_ou_l_imposteur a lit:Book ;
+ml:Tartuffe_ou_l_imposteur a lit:Book ;
   lit:title "Tartuffe ou l'imposteur" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Le_misanthrope a lit:Book ;
+ml:Le_misanthrope a lit:Book ;
   lit:title "Le misanthrope" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Le_bourgeois_gentilhomme a lit:Book ;
+ml:Le_bourgeois_gentilhomme a lit:Book ;
   lit:title "Le bourgeois gentilhomme" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Les_femmes_savantes a lit:Book ;
+ml:Les_femmes_savantes a lit:Book ;
   lit:title "Les femmes savantes" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
 
-lit:Le_malade_imaginaire a lit:Book ;
+ml:Le_malade_imaginaire a lit:Book ;
   lit:title "Le malade imaginaire" ;
   lit:writtenIn ml:17th ;
   lit:writtenBy ml:Molière ;
   lit:hasGenre ml:Classicist_Literature .
+
+# ml:The_Spectator a lit:Book ;
+
+ml:Love_for_love a lit:Book ;
+  lit:title "Love for Love" ;
+  lit:writtenIn ml:17th ;
+  lit:writtenBy ml:William_Congreve ;
+  lit:hasGenre ml:Restoration_Comedy .
+
+ml:The_Beggar_s_Opera a lit:Book ;
+  lit:title "The Beggar's Opera" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:John_Gay ;
+  lit:hasGenre ml:Restoration_Comedy .
+
+ml:Le_jeu_de_l_amour_et_du_hasard a lit:Book ;
+  lit:title "Le jeu de l'amour et du hasard" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Pierre_de_Mariveaux ;
+  lit:hasGenre ml:Comedie_Larmoyante .
+
+ml:Le_paysan_parvenu a lit:Book ;
+  lit:title "Le paysan parvenu" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Pierre_de_Mariveaux ;
+  lit:hasGenre ml:Comedie_Larmoyante .
+
+ml:Les_fausses_confidences a lit:Book ;
+  lit:title "Les fausses confidences" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Pierre_de_Mariveaux ;
+  lit:hasGenre ml:Comedie_Larmoyante .
+
+ml:le_barbier_de_seville a lit:Book ;
+  lit:title "Le Barbier de Séville" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Pierre_de_Beaumarchais ;
+  lit:hasGenre ml:Comedie_Larmoyante .
+
+ml:le_mariage_de_figaro a lit:Book ;
+  lit:title "Le Mariage de Figaro" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Pierre_de_Beaumarchais ;
+  lit:hasGenre ml:Comedie_Larmoyante .
+
+ml:Epistels_van_Fredman a lit:Book ;
+  lit:title "Epistels van Fredman" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Carl_Micheal_Bellman ;
+  lit:hasGenre ml:Rococo_Literature .
+
+ml:Pastorals a lit:Book ;
+  lit:title "Pastorals" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Alexander_Pope .
+
+ml:Eloisa_to_Abelard a lit:Book ;
+  lit:title "Eloisa to Abelard" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Alexander_Pope .
+
+ml:Die_geschichte_des_agathons a lit:Book ;
+  lit:title "Die Geschichte des Agathons" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Christoph_Martin_Wieland ;
+  lit:hasGenre ml:Rococo_Literature .
+
+ml:Nathan_der_Weise a lit:Book ;
+  lit:title "Nathan der Weise" ;
+  lit:writtenBy ml:Gotthold_Ephraim_Lessing ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Encyclopedie a lit:Book ;
+  lit:title "Encyclopédie" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Dennis_Diderot ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:La_Religieuse a lit:Book ;
+  lit:title "La Religieuse" ;
+  lit:writtenBy ml:Dennis_Diderot ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Le_neveu_de_Rameau a lit:Book ;
+  lit:title "Le neveu de Rameau" ;
+  lit:writtenBy ml:Dennis_Diderot ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Jacques_le_fataliste_et_son_maitre a lit:Book ;
+  lit:title "Jacques le fataliste et son maître" ;
+  lit:writtenBy ml:Dennis_Diderot ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Zadig_ou_la_destinee a lit:Book ;
+  lit:title "Zadig ou la Destinée" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Voltaire ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Micromegas a lit:Book ;
+  lit:title "Micromégas" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Voltaire ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Candide_ou_l_optimisme a lit:Book ;
+  lit:title "Candide ou l'optimisme" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Voltaire ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:An_essay_on_criticism a lit:Book ;
+  lit:title "An Essay on Criticism" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Alexander_Pope ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Essay_on_man a lit:Book ;
+  lit:title "Essay on Man" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Alexander_Pope ;
+  lit:hasGenre ml:Philosophical_Enlightenment_Literature .
+
+ml:Robinson_Crusoe a lit:Book ;
+  lit:title "Robinson Crusoe" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Daniel_Defoe ;
+  lit:hasGenre ml:English_Civil_Novel_of_Manners .
+
+ml:Moll_Flanders a lit:Book ;
+  lit:title "Moll FLanders" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Daniel_Defoe ;
+  lit:hasGenre ml:English_Civil_Novel_of_Manners .
+
+ml:Gulliver_s_Travels a lit:Book ;
+  lit:title "Gulliver's Travels" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Jonathan_Swift ;
+  lit:hasGenre ml:English_Civil_Novel_of_Manners .
+
+ml:The_history_of_tom_jonas_a_foundling a lit:Book ;
+  lit:title "The History of Tom Jones, a Foundling" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Henry_Fielding ;
+  lit:hasGenre ml:English_Civil_Novel_of_Manners .
+
+ml:Joseph_Andrews a lit:Book ;
+  lit:title "Joseph Andrews" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Fielding ;
+  lit:hasGenre ml:English_Civil_Novel_of_Manners .
+
+ml:Pamela_or_virtue_rewarded a lit:Book ;
+  lit:title "Pamela or Virtue Rewarded" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Samuel_Richardson ;
+  lit:hasGenre ml:Sentimental_Novel_of_Manners .
+
+ml:Clarissa_harlowe a lit:Book ;
+  lit:title "Clarissa Harlowe" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:Samuel_Richardson ;
+  lit:hasGenre ml:Sentimental_Novel_of_Manners .
+
+ml:The_life_and_opinions_of_tristram_shandy_gentleman a lit:Book ;
+  lit:title "The Life and Opinions of Tristram Shandy, Gentleman" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Lawrence_Sterne ;
+  lit:hasGenre ml:Sentimental_Novel_of_Manners .
+
+ml:A_sentimental_journey_through_france_and_italy a lit:Book ;
+  lit:title "A Sentimental Journey through France and Italy" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Lawrence_Sterne ;
+  lit:hasGenre ml:Sentimental_Novel_of_Manners .
+
+ml:Manon_Lescaut a lit:Book ;
+  lit:title "Manon Lescaut" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Antoine_Francois_Prevost ;
+  lit:hasGenre ml:Sentimental_Novel_of_Manners .
+
+ml:Discours_sur_les_sciences_et_les_arts a lit:Book ;
+  lit:title "Discours sur les sciences et les arts" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Discours_sur_l_origine_et_les_fondaments_de_l_inegalite_parmi_les_hommes a lit:Book ;
+  lit:title "Discours sur l'origine et les fondaments de l'inégalité parmi les hommes" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Du_contrat_social_ou_pricipes_du_droit_politique a lit:Book ;
+  lit:title "Du contrat social, ou Principes du droit politique" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Emile_ou_l_education a lit:Book ;
+  lit:title "Emile, ou l'Education" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Julie_ou_la_nouvelle_heloise a lit:Book ;
+  lit:title "Julie ou La nouvelle Héloïse. Lettres de deux amants habitants d'une petite ville au pied des Alpes" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Confessions a lit:Book ;
+  lit:title "Confessions" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Jean_Jacques_Rousseau ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Het_lijden_van_de_jonge_Werther a lit:Book ;
+  lit:title "Het lijden van de jonge Werther" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Johann_Wolfgang_von_Goethe ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:The_Seasons a lit:Book ;
+  lit:title "The Seasons" ;
+  lit:writtenIn ml:18th_first ;
+  lit:writtenBy ml:James_Thomson ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml:Elegy_written_in_a_country_churchyard a lit:Book ;
+  lit:title "Elegy written in a Country Churchyard" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Thomas_Gray ;
+  lit:hasGenre ml:Graveyard_Poetry .
+
+ml:The_Castle_of_Otranto a lit:Book ;
+  lit:title "The Castle of Otranto" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Horace_Walpole ;
+  lit:hasGenre ml:Gothic_Novel .
+
+ml:The_mysteries_of_udolpho a lit:Book ;
+  lit:title "The Mysteries of Udolpho" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Ann_Radcliffe ;
+  lit:hasGenre ml:Gothic_Novel .
+
+ml:The_Monko a lit:Book ;
+  lit:title "The Monk" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:MG_Lewis ;
+  lit:hasGenre ml:Gothic_Novel .
+
+ml:Fragments_of_Ancient_Poetry a lit:Book ;
+  lit:title "Fragments of Ancient Poetry, Collected in te Highlands of SCotland and translated from the Gaelic of Erse Language" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:James_MacPherson ;
+  lit:hasGenre ml:Pre_Romanticism_Literature .
+
+ml: a lit:Book ;
+  lit:title "" ;
+  lit:writtenIn ml: ;
+  lit:writtenBy ml: ;
+  lit:hasGenre ml: .
