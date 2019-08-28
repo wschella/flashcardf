@@ -984,6 +984,344 @@ ml:James_MacPherson a lit:Writer ;
   lit:name "James MacPherson" ;
   lit:livedIn ml:18th_first, ml:18th_second .
 
+ml:William_Wordsworth a lit:Writer ;
+  lit:name "William Wordsworth" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Samuel_Coleridge a lit:Writer ;
+  lit:name "Samuel Coleridge" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Lord_Byron a lit:Writer ;
+  lit:name "Lord Byron (George Gordon)" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Friedrich_Schillder a lit:Writer ;
+  lit:name "Friedrich Schiller" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Heinrich_von_Kleist a lit:Writer ;
+  lit:name "Heinrich von Kleist" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Stendhal a lit:Writer ;
+  lit:name "Stendhal" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Heinrich_Heine a lit:Writer ;
+  lit:name "Heinrich Heine" .
+
+ml:Alphonse_de_Lamartine a lit:Writer ;
+  lit:name "Alphonse de Lamartine" ;
+  lit:livedIn ml:18th_second, ml:19th_first, ml:19th_second .
+
+ml:Percy_Bysshe_Shelley a lit:Writer ;
+  lit:name "Percy Bysshe Shelley" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:John_Keats a lit:Writer ;
+  lit:name "John Keats" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Alfred_de_Musset a lit:Writer ;
+  lit:name "Alfred de Musset" ;
+  lit:livedIn ml:19th_first,  ml:19th_second .
+
+ml:Novalis a lit:Writer ;
+  lit:name "Novalis (Friedrich Leopold von Hardenberg)" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:ETA_Hoffmann a lit:Writer ;
+  lit:name "E.T.A Hoffmann" .
+
+ml:Mary_Shelley a lit:Writer ;
+  lit:name "Mary Shelley" .
+
+ml:Edgar_Allan_Poe a lit:Writer ;
+  lit:name "Edgar Allan Poe" .
+
+ml:Robert_Louis_Stevenson a lit:Writer ;
+  lit:name "Robert Louis Stevenson" .
+
+ml:Bram_Stoker a lit:Writer ;
+  lit:name "Bram Stoker" .
+
+ml:Gustav_Meyrink a lit:Writer ;
+  lit:name "Gustav Meyrink" .
+
+ml:William_Blake a lit:Writer ;
+  lit:name "William Blake" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Sir_Walter_Scott a lit:Writer ;
+  lit:name "Sir Walter Scott" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Francois_Rene_Chateaubriand a lit:Writer ;
+  lit:name "François René Chateaubriand" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Eugene_Sue a lit:Writer ;
+  lit:name "Eugène Sue" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Victor_Hugo a lit:Writer ;
+  lit:name "Victor Hugo" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Honore_de_Balzac a lit:Writer ;
+  lit:name "Honoré de Balzac" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:Karl_Marx a lit:Writer ;
+  lit:name "Karl Marx" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Saint_Simon a lit:Writer ;
+  lit:name "Saint-Simon" ;
+  lit:livedIn ml:18th_second, ml:19th_first .
+
+ml:David_F_Strauss a lit:Writer ;
+  lit:name "David F. Strauss" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Ernest_Renan a lit:Writer ;
+  lit:name "Ernest Renan" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Ludwig_Feuerbach a lit:Writer ;
+  lit:name "Ludwig Feuerbach" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Charles_Darwin a lit:Writer ;
+  lit:name "Charles Darwin" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Hippolyte_Taine a lit:Writer ;
+  lit:name "Hippolyte Taine" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Gustave_Flaubert a lit:Writer ;
+  lit:name "Gustave Flaubert" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Emile_Zola a lit:Writer ;
+  lit:name "Emile Zola" ;
+  lit:livedIn ml:19th_first, ml:19th_second, ml:20th_pre_1st_war .
+
+ml:Charles_Dickens a lit:Writer ;
+  lit:name "Charles Dickens" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:William_Makepeace_Thackeray a lit:Writer ;
+  lit:name "William Makepeace Thackeray" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Charlotte_Bronte a lit:Writer ;
+  lit:name "Charlotte Brontë" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Emily_Bronte a lit:Writer ;
+  lit:name "Emily Brontë" ;
+  lit:livedIn ml:19th_first .
+
+ml:George_Elliot a lit:Writer ;
+  lit:name "George Eliot (Mary Ann Evans)" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Ivan_Toergenjev a lit:Writer ;
+  lit:name "Ivan Toergenjev" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Fjodor_Dostojevski a lit:Writer ;
+  lit:name "Fjodor Dostojevski" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Ljev_Tolstoj a lit:Writer ;
+  lit:name "Ljev Tolstoj" ;
+  lit:livedIn ml:19th_first, ml:19th_second, ml:20th_pre_1st_war .
+
+ml:Henrik_Ibsen a lit:Writer ;
+  lit:name "Henrik Ibsen" ;
+  lit:livedIn ml:19th_first, ml:19th_second, ml:20th_pre_1st_war .
+
+ml:August_Strindberg a lit:Writer ;
+  lit:name "August_Strindberg" ;
+  lit:livedIn ml:19th_first, ml:19th_second, ml:20th_pre_1st_war .
+
+ml:Gerhart_Hauptmann a lit:Writer ;
+  lit:name "Gerhart Hauptmann" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Herman_Heijermans a lit:Writer ;
+  lit:name "Herman Heijermans" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Henri_Bergson a lit:Writer ;
+  lit:name "Henri Bergson" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Charles_Baudelaire a lit:Writer ;
+  lit:name "Charles Baudelaire" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Paul_Verlaine a lit:Writer ;
+  lit:name "Paul Verlaine" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Stephane_Mallarme a lit:Writer ;
+  lit:name "Stéphane Mallarmé" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Paul_Valery a lit:Writer ;
+  lit:name "Paul Valéry" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum.
+
+ml:Rainer_Maria_Rilke a lit:Writer ;
+  lit:name "Rainer Maria Rilke" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum.
+
+ml:William_Butler_Yeats a lit:Writer ;
+  lit:name "William Butler Yeats" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum.
+
+ml:Maurice_Maeterlinck a lit:Writer ;
+  lit:name "Maurice Maeterlinck" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Anton_Tsjechov a lit:Writer ;
+  lit:name "Anton Tsjechov" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war.
+
+ml:JK_Huysmans a lit:Writer ;
+  lit:name "J.K. Huysmans" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war.
+
+ml:Oscar_Wilde a lit:Writer ;
+  lit:name "Oscar Wilde" ;
+  lit:livedIn ml:19th_second .
+
+ml:Georges_Rodenbach a lit:Writer ;
+  lit:name "Georges Rodenbach" .
+
+ml:Oswald_Spenger a lit:Writer ;
+  lit:name "Oswald Spenger" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Jose_Ortegay_Casset a lit:Writer ;
+  lit:name "José Ortegay Casset" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Miguel_de_Unamuno a lit:Writer ;
+  lit:name "Miguel de Unamuno" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Filippo_Marinetti a lit:Writer ;
+  lit:name "Filippo Marinetti" .
+
+ml:Jacob_van_Hoddis a lit:Writer ;
+  lit:name "Jacob van Hoddis" .
+
+ml:George_Heym a lit:Writer ;
+  lit:name "George Heym" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war.
+
+ml:Gottfried_Benn a lit:Writer ;
+  lit:name "Gottfried Benn" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Paul_Van_Ostaijen a lit:Writer ;
+  lit:name "Paul van Ostaijen" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Louis_Aragon a lit:Writer ;
+  lit:name "Louis Aragon" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Paul_Eluard a lit:Writer ;
+  lit:name "Paul Eluard" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Henry_James a lit:Writer ;
+  lit:name "Henry James" ;
+  lit:livedIn ml:19th_first, ml:19th_second, ml:20th_pre_1st_war .
+
+ml:Francois_Mauriac a lit:Writer ;
+  lit:name "Franćois Mauriac" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Graham_Greene a lit:Writer ;
+  lit:name "Graham Greene" ;
+  lit:livedIn ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:George_Bernanos a lit:Writer ;
+  lit:name "George Bernanos" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Thomas_Stearns_Elliot a lit:Writer ;
+  lit:name "Thomas Stearns Elliot" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:William_Faulkner a lit:Writer ;
+  lit:name "William Faulkner" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Thomas_Mann a lit:Writer ;
+  lit:name "Thomas Mann" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Sigrid_Unset a lit:Writer ;
+  lit:name "Sigrid Unset" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Robert_Musil a lit:Writer ;
+  lit:name "Robert Musil" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Jean_Paul_Sartre a lit:Writer ;
+  lit:name "Jean-Paul Sartre" ;
+  lit:livedIn ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Albert_Camus a lit:Writer ;
+  lit:name "Albert Camus" ;
+  lit:livedIn ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Marcel_Proust a lit:Writer ;
+  lit:name "Marcel Proust" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Virginia_Wolf a lit:Writer ;
+  lit:name "Virginia Wolf" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Franz_Kafka a lit:Writer ;
+  lit:name "Franz Kafka" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Joseph_Conrad a lit:Writer ;
+  lit:name "Joseph Conrad" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:James_Joyce a lit:Writer ;
+  lit:name "James Joyce" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum .
+
+ml:Alfred_Doblin a lit:Writer ;
+  lit:name "Alfred Döblin" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:John_Dos_Passos a lit:Writer ;
+  lit:name "John Dos Passos" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:George_Bernard_Shaw a lit:Writer ;
+  lit:name "George Bernard Shaw" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
+ml:Bertolt_Brecht a lit:Writer ;
+  lit:name "Bertolt Brecht" ;
+  lit:livedIn ml:19th_second, ml:20th_pre_1st_war, ml:20th_interbellum, ml:20th_post_2nd_war .
+
 # -----------------------------------------------------------------------------
 # Books -----------------------------------------------------------------------
 # -----------------------------------------------------------------------------
