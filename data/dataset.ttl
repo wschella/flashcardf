@@ -135,13 +135,16 @@ ml:Rococo a lit:LitaturePeriod ;
   lit:inTimePeriod ml:18th_second .
 
 ml:NeoClassicism a lit:LitaturePeriod ;
-  rdf:label "neo-classicisme"@nl .
+  rdf:label "neo-classicisme"@nl ;
+  lit:inTimePeriod ml:18th_second .
 
 ml:The_Enlightenment a lit:LitaturePeriod ;
-  rdf:label "de Verlichting"@nl .
+  rdf:label "de Verlichting"@nl ;
+  lit:inTimePeriod ml:18th_first, ml:18th_second .
 
 ml:Pre_Romanticism a lit:LiteraturePeriod ;
-  rdf:label "preromantiek"@nl .
+  rdf:label "preromantiek"@nl ;
+  lit:inTimePeriod ml:18th_first, ml:18th_second .
 
 # Time Peridos ----------------------------------------------------------------
 
@@ -323,6 +326,7 @@ ml:Nature a lit:Trait ; rdf:label "natuur"@nl .
 ml:Supernatural a lit:Trait ; rdf:label "bovennatuurlijke"@nl .
 ml:Nostalgic a lit:Trait ; rdf:label "nostalgisch"@nl .
 ml:Cult_of_the_Pristine a lit:Trait ; rdf:label "cultus van het ongerepte"@nl .
+ml:Religious a lit:Trait ; rdf:label "religieus"@nl .
 
 # -----------------------------------------------------------------------------
 # Genres ----------------------------------------------------------------------
@@ -715,6 +719,73 @@ ml:Gothic_Novel a lit:Genre ;
   lit:inLiteraturePeriod ml:Pre_Romanticism ;
   lit:isSubGenreOf ml:Pre_Romanticism_Literature .
 
+ml:Romanticism a lit:Genre ;
+  rdf:label "romantiek"@nl ;
+  lit:inTimePeriod ml:19th_first ;
+  lit:characterizedBy
+    ml:Emotional ,
+    ml:Melancholic ,
+    ml:Sadness ,
+    ml:Individualism ,
+    ml:Originality .
+
+ml:Individual_Romanticism a lit:Genre ;
+  rdf:label "romantiek met individuele thematiek"@nl ;
+  lit:isSubGenreOf ml:Romanticism ;
+  lit:characterizedBy
+    ml:Individualism ,
+    ml:Existential .
+
+ml:Irrational_Romanticism a lit:Genre ;
+  rdf:label "romantiek met irrationele thematiek"@nl ;
+  lit:isSubGenreOf ml:Romanticism ;
+  lit:characterizedBy
+    ml:Love ,
+    ml:Emotional .
+
+ml:Escapist_Romanticism a lit:Genre ;
+  rdf:label "romantiek met escapistische thematiek"@nl ;
+  lit:isSubGenreOf ml:Romanticism ;
+  lit:characterizedBy
+    ml:Nature ,
+    ml:Escapism ,
+    ml:Supernatural ,
+    ml:Cult_of_the_Pristine .
+
+ml:Religious_Romanticism a lit:Genre ;
+  rdf:label "romantiek met irrationele thematiek"@nl ;
+  lit:isSubGenreOf ml:Romanticism ;
+  lit:characterizedBy
+    ml:Religious .
+
+
+ml:Symbolism a lit:Genre ;
+  rdf:label "symbolisme"@nl ;
+  lit:inTimePeriod ml:19th_second ;
+  lit:characterizedBy
+    ml:Emotional ,
+    ml:Pessimistic .
+
+ml:Romantic_Realism a lit:Genre ;
+  rdf:label "romantisch realisme"@nl ;
+  lit:inTimePeriod ml:19th_first ;
+  lit:characterizedBy
+    ml:Rationality ,
+    ml:Socially_Critical .
+
+ml:Realism a lit:Genre ;
+  rdf:label "realisme"@nl ;
+  lit:inTimePeriod ml:19th_second ;
+  lit:characterizedBy
+    ml:Rationality ,
+    ml:Socially_Critical .
+
+ml:Naturalism a lit:Genre ;
+  rdf:label "naturalism"@nl ;
+  lit:inTimePeriod ml:19th_second ;
+  lit:characterizedBy
+    ml:Rationality .
+
 # -----------------------------------------------------------------------------
 # Writers ---------------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -1005,7 +1076,7 @@ ml:Heinrich_von_Kleist a lit:Writer ;
   lit:livedIn ml:18th_second, ml:19th_first .
 
 ml:Stendhal a lit:Writer ;
-  lit:name "Stendhal" ;
+  lit:name "Stendhal (Marie-Henri Beyle)" ;
   lit:livedIn ml:18th_second, ml:19th_first .
 
 ml:Heinrich_Heine a lit:Writer ;
@@ -1063,6 +1134,10 @@ ml:Francois_Rene_Chateaubriand a lit:Writer ;
 
 ml:Eugene_Sue a lit:Writer ;
   lit:name "Eugène Sue" ;
+  lit:livedIn ml:19th_first, ml:19th_second .
+
+ml:Georges_Sand a lit:Writer ;
+  lit:name "Georges Sand" ;
   lit:livedIn ml:19th_first, ml:19th_second .
 
 ml:Victor_Hugo a lit:Writer ;
@@ -1557,7 +1632,7 @@ ml:Abrège_d_art_poétique a lit:Book ;
 ml:Astrophel_and_Stella a lit:Book ;
   lit:title "Astrophel and Stella" ;
   lit:writtenBy ml:Philip_Sydney ;
-  lit:writtenIn lit:16th ;
+  lit:writtenIn ml:16th ;
   lit:hasGenre ml:Renaissance_Literature .
 
 ml:Venus_and_Adonis a lit:Book ;
@@ -2177,8 +2252,298 @@ ml:Fragments_of_Ancient_Poetry a lit:Book ;
   lit:writtenBy ml:James_MacPherson ;
   lit:hasGenre ml:Pre_Romanticism_Literature .
 
-ml: a lit:Book ;
-  lit:title "" ;
-  lit:writtenIn ml: ;
-  lit:writtenBy ml: ;
-  lit:hasGenre ml: .
+ml:Lyrical_Ballads a lit:Book ;
+  lit:title "Lyrical Ballads" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:William_Wordsworth ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Cromwell a lit:Book ;
+  lit:title "Cromwell" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Victor_Hugo ;
+  lit:hasGenre ml:Romanticism .
+
+ml:Gotz_von_Berlichingen a lit:Book ;
+  lit:title "Götz von Berlichingen" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Johann_Wolfgang_von_Goethe ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Egmont a lit:Book ;
+  lit:title "Egmont" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Johann_Wolfgang_von_Goethe ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Die_Rauber a lit:Book ;
+  lit:title "Die Räuber" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Schiller ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Don_Carlos a lit:Book ;
+  lit:title "Don Carlos" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Schiller ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Wallenstein a lit:Book ;
+  lit:title "Wallenstein" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Schiller ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Prinz_Friedrich_von_Homburg a lit:Book ;
+  lit:title "Prinz (Friedrich) von Homburg" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Kleist ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Childe_Harold_s_Piligrimage a lit:Book ;
+  lit:title "Childe Harold's Pilgrimage" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Lord_Byron ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Don_Juan a lit:Book ;
+  lit:title "Don Juan" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Lord_Byron ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Le_Rouge_et_le_Noir a lit:Book ;
+  lit:title "Le Rouge et le Noir" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Stendhal ;
+  lit:hasGenre
+    ml:Individual_Romanticism ,
+    ml:Romantic_Realism .
+
+ml:Reisebilder a lit:Book ;
+  lit:title "Reisebilder" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Heinrich_Heine ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Deutschland_ein_Wintermarchen a lit:Book ;
+  lit:title "Deutschland, ein Wintermärchen" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Heinrich_Heine;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Jocelyn a lit:Book ;
+  lit:title "Jocelyn" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Alphonse_de_Lamartine ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Hymn_to_intellectual_beauty a lit:Book ;
+  lit:title "Hymn to Intellectual Beauty" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Percy_Bysshe_Shelley ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Ode_to_the_west_wind a lit:Book ;
+  lit:title "Ode to the West Wind" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Percy_Bysshe_Shelley ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:The_cloud a lit:Book ;
+  lit:title "The Cloud" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Percy_Bysshe_Shelley ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:To_a_Skylark a lit:Book ;
+  lit:title "To a Skylark" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Percy_Bysshe_Shelley ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Endymion a lit:Book ;
+  lit:title "Endymion" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:John_Keats ;
+  lit:hasGenre ml:Individual_Romanticism .
+
+ml:Die_Wahlverwantschaften a lit:Book ;
+  lit:title "Die Wahlverwantschaften" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Johann_Wolfgang_von_Goethe ;
+  lit:hasGenre ml:Irrational_Romanticism .
+
+ml:Alastor_or_the_Spirit_of_Solitude a lit:Book ;
+  lit:title "Alastor, or the Spirit of Solitude" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Percy_Bysshe_Shelley ;
+  lit:hasGenre ml:Irrational_Romanticism .
+
+ml:Les_Nuits a lit:Book ;
+  lit:title "Les Nuits" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Alfred_de_Musset ;
+  lit:hasGenre ml:Irrational_Romanticism .
+
+ml:Hymnen_an_die_Nacht a lit:Book ;
+  lit:title "Hymnen an die Nacht" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Novalis ;
+  lit:hasGenre ml:Irrational_Romanticism .
+
+ml:Die_Elexiere_des_Teufels a lit:Book ;
+  lit:title "Die Elexiere des Teufels" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:ETA_Hoffmann ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Frankenstein a lit:Book ;
+  lit:title "Frankenstein" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Mary_Shelley ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Murders_in_the_Rue_Morgue a lit:Book ;
+  lit:title "The Murders in the Rue Morgue" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Edgar_Allan_Poe ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Cask_of_Amontillado a lit:Book ;
+  lit:title "The Cask of Amontillado" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Edgar_Allan_Poe ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Tell_Tale_Heart a lit:Book ;
+  lit:title "The Tell-Tale Heart" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Edgar_Allan_Poe ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Strange_Case_Dr_Jekyll_and_Mr_Hyde a lit:Book ;
+  lit:title "The Strange Case of Dr. Jekyll and Mr. Hyde" ;
+  lit:writtenIn ml:19th_second ;
+  lit:writtenBy ml:Robert_Louis_Stevenson ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Dracula a lit:Book ;
+  lit:title "Dracula" ;
+  lit:writtenIn ml:19th_second ;
+  lit:writtenBy ml:Bram_Stoker ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Golem a lit:Book ;
+  lit:title "The Golem" ;
+  lit:writtenIn ml:20th_pre_1st_war ;
+  lit:writtenBy ml:Gustav_Meyrink ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_Ancient_Mariner a lit:Book ;
+  lit:title "The Ancient Mariner" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:Coleridge ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Lucy_Poems a lit:Book ;
+  lit:title "Lucy-Poems" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:William_Wordsworth ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Songs_of_Innocence a lit:Book ;
+  lit:title "Songs of Innocence" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:William_Blake ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Songs_of_Experience a lit:Book ;
+  lit:title "Songs of Experience" ;
+  lit:writtenIn ml:18th_second ;
+  lit:writtenBy ml:William_Blake ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Waverley_or_t_is_sixty_years_since a lit:Book ;
+  lit:title "Waverley or 't is Sixty Years Since" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Sir_Walter_Scott ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Ivanhoe a lit:Book ;
+  lit:title "Ivanhoe" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Sir_Walter_Scott ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:Atala_ou_les_amours_De_deux_sauvages_dans_le_desert a lit:Book ;
+  lit:title "Atala ou Les amours de deux sauvages dans le désert" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Francois_Rene_Chateaubriand ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:René a lit:Book ;
+  lit:title "René" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Francois_Rene_Chateaubriand ;
+  lit:hasGenre ml:Escapist_Romanticism .
+
+ml:The_book_of_urizen a lit:Book ;
+  lit:title "The Book of Urizen" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:William_Blake ;
+  lit:hasGenre ml:Religious_Romanticism .
+
+ml:Frost_at_midnight a lit:Book ;
+  lit:title "Frost at Midnight" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Coleridge ;
+  lit:hasGenre ml:Religious_Romanticism .
+
+ml:Meditations_poetique a lit:Book ;
+  lit:title "Méditations poétique" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Alphonse_de_Lamartine ;
+  lit:hasGenre ml:Religious_Romanticism .
+
+ml:Les_harmonies_poetiques_et_religieuses a lit:Book ;
+  lit:title "Les Harmonies poétiques et réligieuses" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Alphonse_de_Lamartine ;
+  lit:hasGenre ml:Religious_Romanticism .
+
+ml:Uber_allen_gripfeln_ist_ruh a lit:Book ;
+  lit:title "Über allen Gripfeln ist Ruh" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Johann_Wolfgang_von_Goethe ;
+  lit:hasGenre ml:Religious_Romanticism .
+
+ml:Les_mysteres_de_paris a lit:Book ;
+  lit:title "Les mystères de Paris" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Eugene_Sue ;
+  lit:hasGenre ml:Romantic_Realism .
+
+ml:Notre_dame_de_paris a lit:Book ;
+  lit:title "Notre-Dame-de-Paris" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Victor_Hugo ;
+  lit:hasGenre ml:Romantic_Realism .
+
+ml:Les_Miserables a lit:Book ;
+  lit:title "Les Misérables" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Victor_Hugo ;
+  lit:hasGenre ml:Romantic_Realism .
+
+ml:Le_chartreuse_de_parme a lit:Book ;
+  lit:title "Le chartreuse de Parme" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Stendhal ;
+  lit:hasGenre ml:Romantic_Realism .
+
+ml:La_comedie_humaine a lit:Book ;
+  lit:title "La Comédie Humaine" ;
+  lit:writtenIn ml:19th_first ;
+  lit:writtenBy ml:Honore_de_Balzac ;
+  lit:hasGenre ml:Romantic_Realism .
