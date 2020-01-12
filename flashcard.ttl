@@ -1,0 +1,32 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix fc: <questions/ontology.ttl#> .
+
+fc:QuizContext a owl:Class .
+fc:QuestionFormat a owl:Class .
+
+# ----------------------------------
+
+fc:hasPromptFormat a owl:DatatypeProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:string .
+
+fc:hasPrompt a owl:ObjectProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:string .
+
+fc:hasAnswer a owl:ObjectProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:string .
+
+fc:shouldSuggest a owl:DatatypeProperty ;
+  rdfs:domain fc:QuestionFormat ;
+  rdfs:range xsd:int .
+
+# Prefixes to take into account when resolving URL's.
+fc:hasPrefix a owl:DatatypeProperty ;
+  rdfs:domain fc:QuizContext ;
+  rdfs:range xsd:string .

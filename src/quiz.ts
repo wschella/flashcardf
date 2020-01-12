@@ -11,8 +11,7 @@ import {
   Literal
 } from "rdflib";
 
-import { Args, shuffle, random } from "./util";
-import { node } from "prop-types";
+import { Args, shuffle, random, shittyReadTurtleFile } from "./util";
 
 // TODO: Join stores together and use 4th argument to specify source
 // TODO: Support multiple prompts
@@ -23,7 +22,7 @@ const RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#");
 const XSD = Namespace("http://www.w3.org/2001/XMLSchema#");
 const RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 
-const FC = Namespace("file:///questions/ontology.ttl#");
+const FC = Namespace("file:///flashcard.ttl#");
 const Q = Namespace("file:///questions/questions.ttl#");
 const LIT = Namespace("file:///dataset/ontology.ttl#");
 const ML = Namespace("file:///dataset/data.ttl#");
@@ -37,6 +36,7 @@ type Graph = IndexedFormula;
 export class Quiz {
   private dataset: Graph;
   private questions: Graph;
+  private flashcard: Graph;
   private args: Args;
 
   private context: Node;
@@ -47,33 +47,9 @@ export class Quiz {
   constructor(args: Args) {
     this.args = args;
 
-    this.dataset = rdf.graph();
-    rdf.parse(
-      fs.readFileSync(args.dataset).toString(),
-      this.dataset,
-      "file:///",
-      "text/turtle",
-      (err, _) => {
-        if (err) {
-          console.log(err);
-          throw err;
-        }
-      }
-    );
-
-    this.questions = rdf.graph();
-    rdf.parse(
-      fs.readFileSync(args.questions).toString(),
-      this.questions,
-      "file:///",
-      "text/turtle",
-      (err, _) => {
-        if (err) {
-          console.log(err);
-          throw err;
-        }
-      }
-    );
+    this.dataset = shittyReadTurtleFile(args.dataset);
+    this.questions = shittyReadTurtleFile(args.questions);
+    this.flashcard = shittyReadTurtleFile("./flashcard.ttl");
 
     this.context = this.questions.any(
       undefined,
@@ -97,6 +73,9 @@ export class Quiz {
     return `./${path.relative(".", this.args.dir)}/`;
   }
 
+  /**
+   * This is the 'generator' generating questions.
+   */
   // TODO: Validate all queries
   public getQuestion() {
     const format = random(this.formats);

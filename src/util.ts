@@ -1,10 +1,28 @@
 import * as path from "path";
 import * as fs from "fs";
+import * as rdf from "rdflib";
 
 export interface Args {
   dir: string;
   dataset: string;
   questions: string;
+}
+
+export function shittyReadTurtleFile(path: string): rdf.IndexedFormula {
+  const graph = rdf.graph();
+  rdf.parse(
+    fs.readFileSync(path).toString(),
+    graph,
+    "file:///",
+    "text/turtle",
+    (err, _) => {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+    }
+  );
+  return graph;
 }
 
 /**

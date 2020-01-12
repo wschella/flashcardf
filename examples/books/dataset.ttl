@@ -1747,7 +1747,7 @@ ml:All_s_Well_That_Ends_Well a lit:Book ;
   lit:hasGenre ml:Renaissance_Drama .
 
 ml:Measure_for_Measure a lit:Book ;
-  lit:title "Measure_for_Measure" ;
+  lit:title "Measure for Measure" ;
   lit:writtenBy ml:William_Shakespeare ;
   lit:writtenIn ml:17th ;
   lit:hasGenre ml:Renaissance_Drama .
