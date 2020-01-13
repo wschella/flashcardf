@@ -25,6 +25,19 @@ export function shittyReadTurtleFile(path: string): rdf.IndexedFormula {
   return graph;
 }
 
+const langPrefConfig: { [key: string]: number } = {
+  nl: 0,
+  en: 1,
+  undefined: 2
+};
+
+function langPref(lang: string): number {
+  return langPrefConfig[lang] || langPrefConfig["undefined"];
+}
+export function langSort(l1: string, l2: string) {
+  return langPref(l1) - langPref(l2);
+}
+
 /**
  * Validate user passed arguments, checks wether there are enough, and if the
  * context provided matches what we need: a directory with a `questions.ttl` and a

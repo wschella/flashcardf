@@ -12,7 +12,8 @@
   "scripts": {
     "flash": "node ./dist/index.js",
     "watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "validate": "ttl"
   },
   "devDependencies": {
     "@types/node": "^12.7.2",

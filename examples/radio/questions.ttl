@@ -1,0 +1,84 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix fc: <flashcard.ttl#> .
+@prefix q: <questions/questions.ttl#> .
+@prefix radio: <dataset/data.ttl#> .
+
+q:QuizContext a fc:QuizContext ;
+  fc:hasPrefix "owl: <http://www.w3.org/2002/07/owl#>" ,
+              "rdfs: <http://www.w3.org/2000/01/rdf-schema#>" ,
+              "rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" ,
+              "xsd: <http://www.w3.org/2001/XMLSchema#>" ,
+
+              "fc: <file:///questions/ontology.ttl#>" ,
+              "q: <file:///questions/questions.ttl#>" ,
+              "radio: <file:///dataset/data.ttl#>" .
+
+
+# Which work got written in (a ml:Period)? Suggest 4.
+# q:Format1 a fc:QuestionFormat ;
+#   rdf:label "Wat is het code woord voor letter X"@nl ;
+#   fc:hasPromptFormat ("Wat is het code woord voor " "?") ;
+#   fc:shouldSuggest 4 ;
+
+#   # The prompt is a letter
+#   fc:hasPrompt """SELECT ?prompt WHERE {
+#      ?prompt a radio:Letter .
+#   }""" ;
+
+#   # The options are NATO codeword
+#   fc:hasOptions """SELECT ?answer WHERE {
+#     ?letter radio:hasNATOphonetic ?answer .
+#   }""" ;
+
+#   # The answer is the code word the prompt
+#   fc:hasAnswer """SELECT ?answer WHERE {
+#     ?prompt radio:hasNATOphonetic ?answer .
+#   }""" .
+
+q:Format2 a fc:QuestionFormat ;
+  rdf:label "Wat is het code woord voor term X"@nl ;
+  fc:hasPromptFormat ("Wat is het code woord voor '" "'?") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?qcode a radio:QCode ;
+      radio:hasMeaning ?prompt .
+  }
+  """ ;
+
+  fc:hasOptions """ SELECT ?answer WHERE {
+    ?answer a radio:QCode ;
+      radio:hasMeaning ?meaning .
+  }
+  """ ;
+
+  fc:hasAnswer """ SELECT ?answer WHERE {
+    ?answer a radio:QCode ;
+      radio:hasMeaning ?prompt .
+  }
+  """ .
+
+q:Format3 a fc:QuestionFormat ;
+  rdf:label "Wat is de betekenis van QCode X"@nl ;
+  fc:hasPromptFormat ("Wat is de betekenis van " "?") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?prompt a radio:QCode .
+  }
+  """ ;
+
+  fc:hasOptions """ SELECT ?answer WHERE {
+    ?code a radio:QCode ;
+      radio:hasMeaning ?answer .
+  }
+  """ ;
+
+  fc:hasAnswer """ SELECT ?answer WHERE {
+    ?prompt radio:hasMeaning ?answer .
+  }
+  """ .

@@ -11,7 +11,7 @@ import {
   Literal
 } from "rdflib";
 
-import { Args, shuffle, random, shittyReadTurtleFile } from "./util";
+import { Args, shuffle, random, shittyReadTurtleFile, langSort } from "./util";
 
 // TODO: Join stores together and use 4th argument to specify source
 // TODO: Support multiple prompts
@@ -21,11 +21,7 @@ const OWL = Namespace("http://www.w3.org/2002/07/owl#");
 const RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#");
 const XSD = Namespace("http://www.w3.org/2001/XMLSchema#");
 const RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-
 const FC = Namespace("file:///flashcard.ttl#");
-const Q = Namespace("file:///questions/questions.ttl#");
-const LIT = Namespace("file:///dataset/ontology.ttl#");
-const ML = Namespace("file:///dataset/data.ttl#");
 
 /**
  * Type alias for rdflib.IndexedFormula because that's long to type, confusing,
@@ -125,11 +121,11 @@ export class Quiz {
     return { format, prompt, answer, suggestions };
   }
 
-  public formatPrompt(questionFormat: Node, prompt: Node): string {
+  public formatPrompt(questionFormat: Node, promptValue: Node): string {
     const promptFormat = random(
       this.questions.each(questionFormat, FC("hasPromptFormat"))
     );
-    const label = this.labelify(prompt);
+    const label = this.labelify(promptValue);
     const segments = (promptFormat as Collection).elements.map(s => s.value);
     segments.splice(1, 0, label);
     return segments.join("");
@@ -151,8 +147,10 @@ export class Quiz {
   private labelify(node: Node): string {
     const labels = this.dataset
       .each(node, RDF("label"))
-      .filter(label => (label as Literal).lang === "nl");
-    return labels.length >= 1 ? labels[0].value : node.value;
+      .map(node => node.value)
+      .sort(langSort);
+
+    return labels.length >= 1 ? labels[0] : node.value;
   }
 }
 

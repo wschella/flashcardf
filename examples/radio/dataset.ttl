@@ -1,0 +1,226 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix radio: <dataset/data.ttl#> .
+
+# Ontology
+
+radio:Letter a owl:Class .
+
+radio:QCode a owl:Class .
+
+radio:hasNATOphonetic a owl:ObjectProperty ;
+  rdfs:domain radio:Letter ;
+  rdfs:range xsd:string .
+
+radio:hasMeaning a owl:ObjectProperty ;
+  rdfs:domain radio:QCode ;
+  rdfs:range xsd:string .
+
+# Phonetic alphabet
+
+radio:A a radio:Letter ;
+  rdf:label "A" ;
+  radio:hasNATOphonetic "alpha" .
+
+radio:B a radio:Letter ;
+  rdf:label "B" ;
+  radio:hasNATOphonetic "bravo" .
+
+radio:C a radio:Letter ;
+  rdf:label "C" ;
+  radio:hasNATOphonetic "charlie" .
+
+radio:D a radio:Letter ;
+  rdf:label "D" ;
+  radio:hasNATOphonetic "delta" .
+
+radio:E a radio:Letter ;
+  rdf:label "E" ;
+  radio:hasNATOphonetic "echo" .
+
+radio:F a radio:Letter ;
+  rdf:label "F" ;
+  radio:hasNATOphonetic "foxtrot" .
+
+radio:G a radio:Letter ;
+  rdf:label "G" ;
+  radio:hasNATOphonetic "golf" .
+
+radio:H a radio:Letter ;
+  rdf:label "H" ;
+  radio:hasNATOphonetic "hotel" .
+
+radio:I a radio:Letter ;
+  rdf:label "I" ;
+  radio:hasNATOphonetic "india" .
+
+radio:J a radio:Letter ;
+  rdf:label "J" ;
+  radio:hasNATOphonetic "juliet" .
+
+radio:K a radio:Letter ;
+  rdf:label "K" ;
+  radio:hasNATOphonetic "kilo" .
+
+radio:L a radio:Letter ;
+  rdf:label "L" ;
+  radio:hasNATOphonetic "lima" .
+
+radio:M a radio:Letter ;
+  rdf:label "M" ;
+  radio:hasNATOphonetic "mike" .
+
+radio:N a radio:Letter ;
+  rdf:label "N" ;
+  radio:hasNATOphonetic "november" .
+
+radio:O a radio:Letter ;
+  rdf:label "O" ;
+  radio:hasNATOphonetic "oscar" .
+
+radio:P a radio:Letter ;
+  rdf:label "P" ;
+  radio:hasNATOphonetic "papa" .
+
+radio:Q a radio:Letter ;
+  rdf:label "Q" ;
+  radio:hasNATOphonetic "quebec" .
+
+radio:R a radio:Letter ;
+  rdf:label "R" ;
+  radio:hasNATOphonetic "romeo" .
+
+radio:S a radio:Letter ;
+  rdf:label "S" ;
+  radio:hasNATOphonetic "sierra" .
+
+radio:T a radio:Letter ;
+  rdf:label "T" ;
+  radio:hasNATOphonetic "tango" .
+
+radio:U a radio:Letter ;
+  rdf:label "U" ;
+  radio:hasNATOphonetic "uniform" .
+
+radio:V a radio:Letter ;
+  rdf:label "V" ;
+  radio:hasNATOphonetic "victor" .
+
+radio:W a radio:Letter ;
+  rdf:label "W" ;
+  radio:hasNATOphonetic "whiskey" .
+
+radio:X a radio:Letter ;
+  rdf:label "X" ;
+  radio:hasNATOphonetic "x-ray" .
+
+radio:Y a radio:Letter ;
+  rdf:label "Y" ;
+  radio:hasNATOphonetic "yankee" .
+
+radio:Z a radio:Letter ;
+  rdf:label "Z" ;
+  radio:hasNATOphonetic "zulu" .
+
+# Q Codes
+
+radio:QRA a radio:QCode ;
+  rdf:label "QRA" ;
+  radio:hasMeaning "naam"@nl .
+
+radio:QRB a radio:QCode ;
+  rdf:label "QRB" ;
+  radio:hasMeaning "afstand"@nl .
+
+radio:QRG a radio:QCode ;
+  rdf:label "QRG" ;
+  radio:hasMeaning "frequentie"@nl ;
+  radio:hasMeaning "geld"@nl .
+
+radio:QRL a radio:QCode ;
+  rdf:label "QRL" ;
+  radio:hasMeaning "frequentie in gebruik"@nl ;
+  radio:hasMeaning "werk"@nl .
+
+radio:QRM a radio:QCode ;
+  rdf:label "QRM" ;
+  radio:hasMeaning "storing"@nl .
+
+radio:QRN a radio:QCode ;
+  rdf:label "QRN" ;
+  radio:hasMeaning "atmosferische storing"@nl .
+
+radio:QRO a radio:QCode ;
+  rdf:label "QRO" ;
+  radio:hasMeaning "vermogen verhogen"@nl ;
+  radio:hasMeaning "hoog vermogen"@nl .
+
+radio:QRP a radio:QCode ;
+  rdf:label "QRP" ;
+  radio:hasMeaning "vermogen verlagen"@nl ;
+  radio:hasMeaning "laag vermogen"@nl .
+
+radio:QRQ a radio:QCode ;
+  rdf:label "QRQ" ;
+  radio:hasMeaning "sneller seinen"@nl .
+
+radio:QRS a radio:QCode ;
+  rdf:label "QRS" ;
+  radio:hasMeaning "langzamer seinen"@nl .
+
+radio:QRT a radio:QCode ;
+  rdf:label "QRT" ;
+  radio:hasMeaning "stoppen"@nl .
+
+radio:QRV a radio:QCode ;
+  rdf:label "QRV" ;
+  radio:hasMeaning "beschikbaar"@nl .
+
+radio:QRU a radio:QCode ;
+  rdf:label "QRU" ;
+  radio:hasMeaning "informatie"@nl .
+
+radio:QRX a radio:QCode ;
+  rdf:label "QRX" ;
+  radio:hasMeaning "opnieuw aanroepen"@nl ;
+  radio:hasMeaning "even wachten"@nl .
+
+radio:QRZ a radio:QCode ;
+  rdf:label "QRZ" ;
+  radio:hasMeaning "wie"@nl .
+
+radio:QSA a radio:QCode ;
+  rdf:label "QSA" ;
+  radio:hasMeaning "sterkte"@nl .
+
+radio:QSB a radio:QCode ;
+  rdf:label "QSB" ;
+  radio:hasMeaning "naam"@nl .
+
+radio:QSL a radio:QCode ;
+  rdf:label "QSL" ;
+  radio:hasMeaning "ontvangst bevestigen"@nl .
+
+radio:QSO a radio:QCode ;
+  rdf:label "QSO" ;
+  radio:hasMeaning "rechtstreeks werken"@nl ;
+  radio:hasMeaning "radioverbinding"@nl .
+
+radio:QSP a radio:QCode ;
+  rdf:label "QSP" ;
+  radio:hasMeaning "doorsturen"@nl .
+
+radio:QSQ a radio:QCode ;
+  rdf:label "QSQ" ;
+  radio:hasMeaning "dokter"@nl .
+
+radio:QSY a radio:QCode ;
+  rdf:label "QSY" ;
+  radio:hasMeaning "frequentie verandering"@nl .
+
+radio:QTH a radio:QCode ;
+  rdf:label "QTH" ;
+  radio:hasMeaning "locatie"@nl .
