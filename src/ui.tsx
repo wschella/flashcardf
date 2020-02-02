@@ -128,7 +128,8 @@ class Feedback extends Component<FeedbackProps> {
       case "wrong":
         return (
           <Box>
-            <Color red>-- wrong</Color> (answer was {last.correct});
+            <Color red>-- wrong</Color> (answer was '
+            <Text italic>{last.correct}</Text>');
           </Box>
         );
       case "skipped":
