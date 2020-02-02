@@ -15,7 +15,15 @@ radio:hasNATOphonetic a owl:ObjectProperty ;
   rdfs:domain radio:Letter ;
   rdfs:range xsd:string .
 
-radio:hasMeaning a owl:ObjectProperty ;
+radio:hasQuestionMeaning a owl:ObjectProperty ;
+  rdfs:domain radio:QCode ;
+  rdfs:range xsd:string .
+
+radio:hasStatementMeaning a owl:ObjectProperty ;
+  rdfs:domain radio:QCode ;
+  rdfs:range xsd:string .
+
+radio:hasTermMeaning a owl:ObjectProperty ;
   rdfs:domain radio:QCode ;
   rdfs:range xsd:string .
 
@@ -126,101 +134,127 @@ radio:Z a radio:Letter ;
   radio:hasNATOphonetic "zulu" .
 
 # Q Codes
+# Note: incomplete
+# Note: source is partially <https://en.wikipedia.org/wiki/Q_code>
 
 radio:QRA a radio:QCode ;
   rdf:label "QRA" ;
-  radio:hasMeaning "naam"@nl .
+  radio:hasQuestionMeaning "Wat is de naam van uw station?"@nl ;
+  radio:hasStatementMeaning "De naam van mijn station is ..."@nl .
 
 radio:QRB a radio:QCode ;
   rdf:label "QRB" ;
-  radio:hasMeaning "afstand"@nl .
+  radio:hasQuestionMeaning "Wat is de afstand tussen onze stations?"@nl ;
+  radio:hasStatementMeaning "De afstand tussen onze station is ..."@nl .
 
 radio:QRG a radio:QCode ;
   rdf:label "QRG" ;
-  radio:hasMeaning "frequentie"@nl ;
-  radio:hasMeaning "geld"@nl .
+  radio:hasQuestionMeaning "Wat is mijn frequentie?"@nl ;
+  radio:hasStatementMeaning "Uw frequentie is ... (kHz of MHz)"@nl ;
+  radio:hasTermMeaning "geld"@nl .
 
 radio:QRL a radio:QCode ;
   rdf:label "QRL" ;
-  radio:hasMeaning "frequentie in gebruik"@nl ;
-  radio:hasMeaning "werk"@nl .
+  radio:hasQuestionMeaning "Is deze frequentie in gebruik?"@nl ;
+  radio:hasStatementMeaning "Deze frequentie is in gebruik. Gelieve niet te interfereren."@nl ;
+  radio:hasTermMeaning "werk"@nl .
 
 radio:QRM a radio:QCode ;
   rdf:label "QRM" ;
-  radio:hasMeaning "storing"@nl .
+  radio:hasQuestionMeaning "Heeft u last van storing?"@nl ;
+  radio:hasStatementMeaning "Ik heb last van storing."@nl .
 
 radio:QRN a radio:QCode ;
   rdf:label "QRN" ;
-  radio:hasMeaning "atmosferische storing"@nl .
+  radio:hasQuestionMeaning "Heeft u last van atmosferische storing?"@nl ;
+  radio:hasStatementMeaning "Ik heb last van atmosferische storing."@nl .
 
 radio:QRO a radio:QCode ;
   rdf:label "QRO" ;
-  radio:hasMeaning "vermogen verhogen"@nl ;
-  radio:hasMeaning "hoog vermogen"@nl .
+  radio:hasQuestionMeaning "Kunt u het vermogen van de zender verhogen?"@nl ;
+  radio:hasStatementMeaning "Verhoog het vermogen."@nl ;
+  radio:hasTermMeaning "hoog vermogen"@nl .
 
 radio:QRP a radio:QCode ;
   rdf:label "QRP" ;
-  radio:hasMeaning "vermogen verlagen"@nl ;
-  radio:hasMeaning "laag vermogen"@nl .
+  radio:hasQuestionMeaning "Kunt u het vermogen van de zender verlagen?"@nl ;
+  radio:hasStatementMeaning "Verlaag het vermogen."@nl ;
+  radio:hasTermMeaning "laag vermogen"@nl .
 
 radio:QRQ a radio:QCode ;
   rdf:label "QRQ" ;
-  radio:hasMeaning "sneller seinen"@nl .
+  radio:hasQuestionMeaning "Kunt u sneller seinen?"@nl ;
+  radio:hasStatementMeaning "Sein sneller."@nl .
 
 radio:QRS a radio:QCode ;
   rdf:label "QRS" ;
-  radio:hasMeaning "langzamer seinen"@nl .
+  radio:hasQuestionMeaning "Kunt u langzamer seinen?"@nl ;
+  radio:hasStatementMeaning "Sein langzamer."@nl .
 
 radio:QRT a radio:QCode ;
   rdf:label "QRT" ;
-  radio:hasMeaning "stoppen"@nl .
+  radio:hasQuestionMeaning "Zal ik stoppen met zenden?"@nl ;
+  radio:hasStatementMeaning "Ik stop met zenden"@nl .
 
 radio:QRV a radio:QCode ;
   rdf:label "QRV" ;
-  radio:hasMeaning "beschikbaar"@nl .
+  radio:hasQuestionMeaning "Bent u nog beschikbaar?"@nl ;
+  radio:hasStatementMeaning "Ik ben beschikbaar."@nl .
 
 radio:QRU a radio:QCode ;
   rdf:label "QRU" ;
-  radio:hasMeaning "informatie"@nl .
+  radio:hasQuestionMeaning "Heeft u nog informatie voor mij?"@nl ;
+  radio:hasStatementMeaning "Ik heb geen informatie voor u."@nl .
 
 radio:QRX a radio:QCode ;
   rdf:label "QRX" ;
-  radio:hasMeaning "opnieuw aanroepen"@nl ;
-  radio:hasMeaning "even wachten"@nl .
+  radio:hasQuestionMeaning "Wanneer roept u mij weer?"@nl ;
+  radio:hasQuestionMeaning "Zal ik wachten tot u mij opnieuw aanroept?"@nl ;
+  radio:hasStatementMeaning "Graag even wachten."@nl ;
+  radio:hasStatementMeaning "Ik zal u opnieuw contacteren om ... (tijd) op ... (frequentie)."@nl .
 
 radio:QRZ a radio:QCode ;
   rdf:label "QRZ" ;
-  radio:hasMeaning "wie"@nl .
+  radio:hasQuestionMeaning "Door wie word ik aangeroepen?"@nl ;
+  radio:hasStatementMeaning "U word aangeroepen door ... op ..."@nl .
 
 radio:QSA a radio:QCode ;
   rdf:label "QSA" ;
-  radio:hasMeaning "sterkte"@nl .
+  radio:hasQuestionMeaning "Wat is de sterkte van mijn signaal?"@nl ;
+  radio:hasStatementMeaning "De sterkte van uw signaal is ... (1 tot 5)"@nl .
 
 radio:QSB a radio:QCode ;
   rdf:label "QSB" ;
-  radio:hasMeaning "naam"@nl .
+  radio:hasQuestionMeaning "Gaat mijn signaalsterkte op en neer?"@nl ;
+  radio:hasStatementMeaning "Uw signaal is aan het faden."@nl .
 
 radio:QSL a radio:QCode ;
   rdf:label "QSL" ;
-  radio:hasMeaning "ontvangst bevestigen"@nl .
+  radio:hasQuestionMeaning "Kunt u de ontvangst bevestigen?"@nl ;
+  radio:hasStatementMeaning "Ik bevestig ontvangst."@nl .
 
 radio:QSO a radio:QCode ;
   rdf:label "QSO" ;
-  radio:hasMeaning "rechtstreeks werken"@nl ;
-  radio:hasMeaning "radioverbinding"@nl .
+  radio:hasQuestionMeaning "Kunt u rechtstreeks werken met (roepnaam)?"@nl ;
+  radio:hasStatementMeaning "Ik kan rechtstreeks werken met ..."@nl ;
+  radio:hasTermMeaning "radioverbinding"@nl .
 
 radio:QSP a radio:QCode ;
   rdf:label "QSP" ;
-  radio:hasMeaning "doorsturen"@nl .
+  radio:hasQuestionMeaning "Wil u mijn bericht doorsturen naar ...?"@nl ;
+  radio:hasStatementMeaning "Ik zal uw bericht doorsturen naar ..."@nl .
 
 radio:QSQ a radio:QCode ;
   rdf:label "QSQ" ;
-  radio:hasMeaning "dokter"@nl .
+  radio:hasQuestionMeaning "Heeft u een dokter aan boord?"@nl ;
+  radio:hasStatementMeaning "Ik heb een dokter aan boord."@nl .
 
 radio:QSY a radio:QCode ;
   rdf:label "QSY" ;
-  radio:hasMeaning "frequentie verandering"@nl .
+  radio:hasQuestionMeaning "Zullen we veranderen van frequentie naar (frequentie)?"@nl ;
+  radio:hasStatementMeaning "Verander naar frequentie ..."@nl .
 
 radio:QTH a radio:QCode ;
   rdf:label "QTH" ;
-  radio:hasMeaning "locatie"@nl .
+  radio:hasQuestionMeaning "Wat is de locatie van het station?"@nl ;
+  radio:hasStatementMeaning "Mijn positie is ... latitude, ... longitude."@nl .
