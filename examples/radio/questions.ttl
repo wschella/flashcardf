@@ -18,53 +18,55 @@ q:QuizContext a fc:QuizContext ;
               "radio: <file:///dataset/data.ttl#>" .
 
 
-# Which work got written in (a ml:Period)? Suggest 4.
-# q:Format1 a fc:QuestionFormat ;
-#   rdf:label "Wat is het code woord voor letter X"@nl ;
-#   fc:hasPromptFormat ("Wat is het code woord voor " "?") ;
-#   fc:shouldSuggest 4 ;
-
-#   # The prompt is a letter
-#   fc:hasPrompt """SELECT ?prompt WHERE {
-#      ?prompt a radio:Letter .
-#   }""" ;
-
-#   # The options are NATO codeword
-#   fc:hasOptions """SELECT ?answer WHERE {
-#     ?letter radio:hasNATOphonetic ?answer .
-#   }""" ;
-
-#   # The answer is the code word the prompt
-#   fc:hasAnswer """SELECT ?answer WHERE {
-#     ?prompt radio:hasNATOphonetic ?answer .
-#   }""" .
-
-q:Format2 a fc:QuestionFormat ;
-  rdf:label "Wat is het code woord voor term X"@nl ;
-  fc:hasPromptFormat ("Wat is het code woord voor '" "'?") ;
+q:Format1 a fc:QuestionFormat ;
+  rdf:label "Wat is de Q-Code voor statement X"@nl ;
+  fc:hasPromptFormat ("Wat is de Q-Code voor '" "'?") ;
   fc:shouldSuggest 4 ;
 
   fc:hasPrompt """SELECT ?prompt WHERE {
     ?qcode a radio:QCode ;
-      radio:hasMeaning ?prompt .
+      radio:hasStatementMeaning ?prompt .
   }
   """ ;
 
   fc:hasOptions """ SELECT ?answer WHERE {
     ?answer a radio:QCode ;
-      radio:hasMeaning ?meaning .
+      radio:hasStatementMeaning ?meaning .
   }
   """ ;
 
   fc:hasAnswer """ SELECT ?answer WHERE {
     ?answer a radio:QCode ;
-      radio:hasMeaning ?prompt .
+      radio:hasStatementMeaning ?prompt .
+  }
+  """ .
+
+q:Format2 a fc:QuestionFormat ;
+  rdf:label "Wat is de Q-Code voor vraag X"@nl ;
+  fc:hasPromptFormat ("Wat is de Q-Code voor '" "'?") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?qcode a radio:QCode ;
+      radio:hasQuestionMeaning ?prompt .
+  }
+  """ ;
+
+  fc:hasOptions """ SELECT ?answer WHERE {
+    ?answer a radio:QCode ;
+      radio:hasQuestionMeaning ?meaning .
+  }
+  """ ;
+
+  fc:hasAnswer """ SELECT ?answer WHERE {
+    ?answer a radio:QCode ;
+      radio:hasQuestionMeaning ?prompt .
   }
   """ .
 
 q:Format3 a fc:QuestionFormat ;
-  rdf:label "Wat is de betekenis van QCode X"@nl ;
-  fc:hasPromptFormat ("Wat is de betekenis van " "?") ;
+  rdf:label "Wat is de betekenis van de Q-Code-vraag X"@nl ;
+  fc:hasPromptFormat ("Wat is de betekenis van '" "?' ?") ;
   fc:shouldSuggest 4 ;
 
   fc:hasPrompt """SELECT ?prompt WHERE {
@@ -74,11 +76,32 @@ q:Format3 a fc:QuestionFormat ;
 
   fc:hasOptions """ SELECT ?answer WHERE {
     ?code a radio:QCode ;
-      radio:hasMeaning ?answer .
+      radio:hasQuestionMeaning ?answer .
   }
   """ ;
 
   fc:hasAnswer """ SELECT ?answer WHERE {
-    ?prompt radio:hasMeaning ?answer .
+    ?prompt radio:hasQuestionMeaning ?answer .
+  }
+  """ .
+
+q:Format4 a fc:QuestionFormat ;
+  rdf:label "Wat is de betekenis van het Q-Code-statement X"@nl ;
+  fc:hasPromptFormat ("Wat is de betekenis van '" "'?") ;
+  fc:shouldSuggest 4 ;
+
+  fc:hasPrompt """SELECT ?prompt WHERE {
+    ?prompt a radio:QCode .
+  }
+  """ ;
+
+  fc:hasOptions """ SELECT ?answer WHERE {
+    ?code a radio:QCode ;
+      radio:hasStatementMeaning ?answer .
+  }
+  """ ;
+
+  fc:hasAnswer """ SELECT ?answer WHERE {
+    ?prompt radio:hasStatementMeaning ?answer .
   }
   """ .
